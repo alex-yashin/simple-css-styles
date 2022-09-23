@@ -1,0 +1,75 @@
+button, .btn {
+    cursor: pointer;
+}
+
+.btn {
+    text-decoration: none;
+    vertical-align: middle;
+    background: #fff;
+    color: #000;
+    border: 1px solid transparent;
+
+    border-radius: 1.5rem;
+    text-align: center;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    display: inline-block;
+    line-height: 1rem;
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
+    box-sizing: border-box;
+}
+
+.btn-icon:before, .icon {
+    outline: 0;
+    border: none;
+    content: ' ';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+
+.link, .btn-link {
+    text-decoration: none;
+    font-weight: bold;
+    outline: 0;
+    background: 0 0;
+    border: 0;
+    padding: 0;
+}
+
+.link:hover, .btn-link:hover {
+    text-decoration: none;
+    opacity: .8;
+}
+
+.btn button {
+    outline: 0;
+    border: none;
+    background: transparent;
+}
+
+.btn:hover {
+    background: #fffcf0;
+    border: 1px solid transparent;
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
+}
+
+.btn-link, .btn-link:hover {
+    border: none;
+}
+
+.btn-bordered {
+    border: 1px solid #cacacf;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}

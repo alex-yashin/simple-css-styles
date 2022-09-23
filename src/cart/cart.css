@@ -1,0 +1,104 @@
+.btn-icon-cart:before, .icon-cart {
+    background: url(cart.svg) center center no-repeat;
+}
+
+/* группа кнопок покупки и др, например, избранное и шаринг */
+.purchase {
+    display: flex;
+    gap: 1rem;
+    max-width: 400px; /* максимальная ширина tiles */
+}
+
+.control-quantity {
+    position: relative;
+    min-width: 144px;
+}
+
+.control-quantity > .btn {
+    display: none;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.control-quantity > .active {
+    display: inline-block;
+}
+
+.control-quantity .minus, .control-quantity .plus {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 50%;
+}
+
+.control-quantity .minus {
+    left: 0;
+}
+
+.control-quantity .plus {
+    right: 0;
+}
+
+.control-quantity > .complex:before {
+    content: '-';
+    display: inline-block;
+}
+
+.control-quantity > .complex:after {
+    content: '+';
+    display: inline-block;
+}
+
+.control-quantity.sold-out > .complex:after, .control-quantity.sold-out > .plus, .control-quantity.sold-out .simple {
+    visibility: hidden;
+}
+
+/* в режиме комплексной кнопки если простая кнопка отсутвует в принципе (что характерно для корзины), то иконки не выводим */
+.control-quantity .complex:first-child i {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .tiles .purchase, .tiles .control-quantity {
+        min-width: auto;
+    }
+
+    .tiles .purchase {
+        margin-top: 0.5rem;
+        justify-content: space-between;
+    }
+
+    .tiles .purchase .btn {
+        width: auto;
+        padding: 0.5rem;
+    }
+
+    .tiles .purchase .simple.btn:before {
+        width: 1.5rem;
+        height: 1.5rem;
+        display: block;
+    }
+
+    .tiles .purchase .simple.btn > span {
+        display: none;
+    }
+
+    .tiles .purchase .complex.btn:before,
+    .tiles .purchase .complex.btn:after {
+        display: none;
+    }
+
+    .tiles .purchase .complex.btn .minus {
+        width: 0;
+    }
+
+    .tiles .purchase .complex.btn .plus {
+        left: 0;
+        width: 100%;
+    }
+
+}

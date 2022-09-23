@@ -1,0 +1,204 @@
+.container {
+    position: relative;
+    max-width: 3792px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/*
+    400 + 24 (gap) + 400 + 24 + 400, итого выходит 400 * n + 24 * (n-1)
+    824
+    1248
+    1672
+    2096
+    2520
+    2944
+    3368
+    3792
+ */
+
+
+@media (max-width: 3792px) {
+    .container {
+        max-width: 3368px;
+    }
+}
+
+@media (max-width: 3368px) {
+    .container {
+        max-width: 2944px;
+    }
+}
+
+@media (max-width: 2944px) {
+    .container {
+        max-width: 2520px;
+    }
+}
+
+@media (max-width: 2520px) {
+    .container {
+        max-width: 2096px;
+    }
+}
+
+@media (max-width: 2096px) {
+    .container {
+        max-width: 1672px;
+    }
+}
+
+@media (max-width: 1672px) {
+    .container {
+        max-width: 1248px;/* 400 * 3 + 24 * 2 */
+    }
+}
+
+@media (max-width: 1296px) {/* 1248 + 24 = 1272 + 24 = 1296 */
+    .container {
+        max-width: 992px;/* 320 * 3 + 16 * 2 */
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        margin: 0 1rem;
+    }
+}
+
+.section {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+@media (max-width: 992px) {
+    .desktop {
+        display: none !important;
+    }
+}
+
+@media (min-width: 993px) {
+    .mobile {
+        display: none !important;
+    }
+}
+
+body > section > .container > header, body > nav > .container > header, body > .container > main > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* плиточка */
+.tiles, .container.with-sidebar {
+    display: flex;
+    gap: 1.5rem;
+}
+
+@media (max-width: 992px) {
+    body > .container.with-sidebar {
+        display: block;
+    }
+    body > .container.with-sidebar > aside {
+        display: none;
+    }
+}
+
+.tiles {
+    flex-wrap: wrap;
+}
+
+.tiles > * > img {
+    width: 100%;
+}
+
+/* все, что с фоном, должно быть с отступом между собой */
+.card + .card, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .card + .card, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
+        margin-top: 1rem;
+    }
+}
+
+.tiles .card + .card {
+    margin-top: 0;
+}
+
+.tiles > *, .container.with-sidebar aside, .as-tile {
+    min-width: 400px;
+    width: 400px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1296px) {/* 1248 + 24 = 1272 + 24 = 1296 */
+    .tiles, .container.with-sidebar {
+        gap: 1rem;
+    }
+    .tiles > *, .container.with-sidebar aside, .as-tile {
+        min-width: 320px;
+        width: 320px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .tiles, .container.with-sidebar {
+        gap: 1rem;
+        justify-content: space-evenly;
+    }
+    .tiles > *, .container.with-sidebar aside, .as-tile {
+        width: 292px;
+        min-width: 292px;
+    }
+}
+
+/* на небольших экранах карточки в плитке лепим попарно */
+@media (max-width: 992px) {
+    .tiles {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        width: auto;
+        justify-content: space-between;
+        column-gap: 0;
+    }
+
+    .tiles > * {
+        width: 49%;
+        min-width: auto;
+        padding: 1rem;
+    }
+
+    .tiles > .card {
+        border-radius: 0 1rem 1rem 0;
+    }
+
+    .tiles > .card:nth-child(2n) {
+        border-radius: 1rem 0 0 1rem;
+    }
+}
+
+/* если ширина экрана небольшая, то все лепим в одну колонку */
+@media (max-width: 432px) { /* 400 + 16 * 2 */
+    .tiles {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .tiles > *, .as-tile {
+        border-radius: 1rem !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+}
+
+.row {
+    display: flex;
+    gap: 1rem;
+}
+
+.row .col {
+    flex: 1;
+}

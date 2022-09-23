@@ -1,0 +1,173 @@
+.card, .alert {
+    /* overflow: hidden; почему-то заставляет flex сжимать карточку в колонках */
+    display: block;
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+
+    -webkit-box-shadow: 0 4px 40px rgba(217,218,224,.5);
+    box-shadow: 0 4px 40px rgba(217,218,224,.5);
+
+    position: relative;
+}
+
+.card .card-body {
+    position: relative;
+}
+
+@media (max-width: 1024px) {
+    .card, .alert {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 899px) {
+    .alert {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        border-radius: 0;
+    }
+}
+
+.card.compact {
+    padding: 0;
+}
+
+.card.compact > *:first-child {
+    border-radius: 1rem 1rem 0 0;
+}
+
+/* 1.5rem - типовой отступ */
+.card.compact .card-body {
+    padding: 1.5rem;
+}
+
+.card > header {
+    margin: -1.5rem -1.5rem 0 -1.5rem;
+}
+
+@media (max-width: 599px) {
+    .card > header {
+        margin: -1.5rem -1.5rem 0 -1.5rem;
+    }
+}
+
+.card > footer {
+    margin: 0 -1.5rem 0 -1.5rem;
+}
+
+@media (max-width: 599px) {
+    .card > footer {
+        margin: 0 -1.5rem 0 -1.5rem;
+    }
+}
+
+/* подвал карточки может состоять из одной большой кнопки */
+.card > footer > button:last-child {
+    outline: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.card > header > h3 {
+    font-size: 1.5rem;
+    line-height: 1em;
+    padding: 1.5rem;
+    margin: 0;
+}
+
+.card.collapsed > header {
+    cursor: pointer;
+}
+
+.card.collapsed > header > h3:after {
+    content: ' ';
+    width: 0.5em;
+    height: 0.5em;
+    margin-top: 0.25em;
+    float: right;
+
+    background: url(../img/triangle.svg);
+
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease
+}
+
+.card.collapsed > header.active > h3:after {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease
+}
+
+.card.collapsed {
+    padding-bottom: 0;
+}
+
+.card.collapsed > header + * {
+    padding-bottom: 1.5rem;
+    display: none;
+}
+
+.card.collapsed > header.active + * {
+    display: block;
+}
+
+a.card {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* карточки в ячейках */
+.tiles .card-body {
+    margin: 0;
+    padding: 0;
+}
+
+.tiles .card-body, .tiles .card-body > a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tiles .card-body a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.tiles .card-body p {
+    max-height: 6rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 992px) {
+    .tiles > .card .top .badge {
+        padding: 0;
+        font-size: 0.875rem;
+        background: none;
+        display: none;
+    }
+
+    /* так как места мало, оставляем видимым только первый бейдж */
+    .tiles > .card .top .badge:first-child {
+        display: inline-block;
+    }
+
+    .tiles > .card .card-body {
+        padding-top: 1.5rem;
+    }
+
+    .tiles > .card .card-body p {
+        display: none;
+    }
+}

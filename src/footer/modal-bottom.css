@@ -1,0 +1,35 @@
+
+.modal-bottom {
+    background: white;
+    padding: 1rem 1rem 6rem 1rem;
+    border-radius: 1rem 1rem 0 0;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* анимация выкатывания снизу вверх */
+.modal-bottom {
+    z-index: 1001;
+    bottom: -100%;
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
+}
+
+.modal-bottom.active {
+    bottom: 0;
+}
+
+.modal-bottom .close-swipe {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 1.5rem;
+    background: #e1e4ec;
+    border-radius: 4px;
+    margin: auto auto 1.25rem;
+}
+
+

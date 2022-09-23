@@ -1,0 +1,26 @@
+/* общие стили навигации */
+ul.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.nav > li > a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 0.5em 0;
+    line-height: 1.5em;
+}
+
+ul.nav > li.active > a, ul.nav > li > a:hover {
+    color: orange;
+}
+
+ul.nav > li:first-child > a {
+    margin-top: -0.5em;
+}
+
+ul.nav > li:last-child > a {
+    margin-bottom: -0.5em;
+}

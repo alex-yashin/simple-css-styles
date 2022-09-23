@@ -1,0 +1,80 @@
+@import "quick-search.css";
+@import "minicart.css";
+@import "breadcrumbs.css";
+@import "side.css";
+
+/* выпадашка в крайней правой группе должна выпадать немного левее, чтобы не выходить за пределы видимости */
+body > nav.menu ul + ul:last-child .dropdown-menu {
+    right: 0;
+}
+
+body > header.sticky {
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    -webkit-transition: .2s ease;
+    -o-transition: .2s ease;
+    transition: .2s ease;
+    z-index: 13;
+}
+
+body > header > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+body > header > .container > .icon-search,
+body > header > .container > .icon-burger
+{
+    font-size: 1.25rem;
+    height: 1.25rem;
+}
+
+/* меню: nav.menu > .container > ul.nav.bar > li > a */
+nav.menu {
+    width: 100%;
+    line-height: 3.75rem;
+    font-weight: bold;
+    background: white;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+nav.menu + * {
+    clear: both;
+}
+
+nav.menu > .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+@media (max-width: 899px) {
+
+    nav.menu {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    nav.menu ul.nav {
+        display: block;
+        overflow-x: auto;
+    }
+
+    nav.menu ul.nav::-webkit-scrollbar {
+        height: 0;
+    }
+
+}
+
+.btn-icon-search:before, .icon-search {
+    background: url(search2.svg) center center no-repeat;
+}
+
+.icon-burger {
+    background: url(burger.svg) center center no-repeat;
+}

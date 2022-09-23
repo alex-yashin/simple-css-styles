@@ -1,0 +1,108 @@
+.form-group [type="radio"]:not(:checked),
+.form-group [type="radio"]:checked,
+.form-group [type="checkbox"]:not(:checked),
+.form-group [type="checkbox"]:checked
+{
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+}
+
+.form-group [type="radio"] + label,
+.form-group [type="checkbox"] + label
+{
+    pointer-events: auto;
+    cursor: pointer;
+    position: inherit;
+    display: block;
+    top: initial;
+    left: initial;
+    color: inherit;
+
+    line-height: 1.25em;
+
+    margin: 1rem 0;
+}
+
+.form-group [type="radio"] + label,
+.form-group [type="checkbox"] + label,
+.form-group [type="radio"] + label + p,
+.form-group [type="checkbox"] + label + p {
+    padding: 0 0 0 1.5em;
+}
+
+
+.form-group [type="radio"] + label:before,
+.form-group [type="checkbox"] + label:before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+
+    width: 1.25em;
+    height: 1.25em;
+    box-shadow: inset 0 0 0 2px #dddde0;
+    border-radius: 0.25em;
+    transition: .2s ease-in-out all
+}
+
+
+.form-group [type="radio"] + label:after,
+.form-group [type="checkbox"] + label:after
+{
+    content: '';
+    position: absolute;
+    cursor: pointer;
+
+    top: 0.1875em;
+    left: 0.4375em;
+    width: 0.3125em;
+    height: 0.625em;
+    border-right: 0.125em solid transparent;
+    border-bottom: 0.125em solid transparent;
+    transform: rotate(45deg);
+    transition: .2s ease-in-out all;
+}
+
+.form-group [type="radio"] + label:before,
+.form-group [type="radio"] + label:after
+{
+    border-radius: 50%;
+}
+
+.form-group [type=checkbox]:checked+label:before,
+.form-group [type=radio]:checked+label:before
+{
+    background: blue;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.form-group [type=checkbox]:checked+label:after {
+    border-color: #fff
+}
+
+@media (max-device-width: 899px) {
+    .form-group [type="radio"] + label:before,
+    .form-group [type="checkbox"] + label:before
+    {
+        left: auto;
+        right: 0;
+    }
+    .form-group [type="radio"] + label:after,
+    .form-group [type="checkbox"] + label:after
+    {
+        left: auto;
+        right: 0.4375em;
+    }
+
+    .form-group [type="radio"] + label,
+    .form-group [type="checkbox"] + label,
+    .form-group [type="radio"] + label + p,
+    .form-group [type="checkbox"] + label + p {
+        padding: 0 1.5em 0 0;
+    }
+
+}

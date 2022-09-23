@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
+
+    <link href="main.css" rel="stylesheet">
+
+    <title>Компания</title>
+</head>
+<body>
+<nav class="mobile side">
+    <header>
+        <a href="#" data-close-modal>
+            <img src="img/logo.png" style="margin-top: -16px;" alt="">
+            <i class="icon icon-close"></i>
+        </a>
+    </header>
+    <ul class="nav">
+        <li class="delivery"><a href="#" data-toggle-modal=".delivery-address">Ваш регион</a></li>
+    </ul>
+    <ul class="nav">
+        <li class="points"><a href="#">Пункты выдачи</a></li>
+    </ul>
+    <ul class="nav">
+        <li><a href="#">Магазин</a></li>
+        <li><a href="#">Контакты</a></li>
+    </ul>
+    <ul class="nav">
+        <li><a href="#"><span>Русский</span></a></li>
+    </ul>
+</nav>
+<nav class="menu desktop">
+    <div class="container">
+        <ul class="nav bar">
+            <li><a class="check-delivery" href="#" data-toggle-modal=".delivery-address">Ульяновск</a></li>
+            <li><a href="#">Русский</a></li>
+        </ul>
+        <ul class="nav bar">
+            <li><a href="#">Магазин</a></li>
+            <li><a href="#">Доставка</a></li>
+        </ul>
+        <ul class="nav bar">
+            <li class="dropdown">
+                <a href="#">
+                    <img src="https://secure.gravatar.com/avatar/aa7384f659a1c0cfb7ae369c597531cc"
+                         alt="Фото пользователя"/>
+                    Иван Иванов
+                </a>
+                <div class="dropdown-menu">
+                    <ul class="nav">
+                        <li><a href="#">Панель управления</a></li>
+                        <li><a href="#">Заказы <b>(2)</b></a></li>
+                        <li><a href="#">Вознаграждения</a></li>
+                        <li><a href="#">Выйти</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Войти</a></li>
+        </ul>
+
+
+    </div>
+</nav>
+<header>
+    <div class="container">
+        <a href="#" class="icon icon-burger mobile" data-toggle-modal="nav.side"><span></span></a>
+        <a href="#"><img src="img/logo.png" alt="Логотип" style="margin-top: -16px;"></a>
+        <form class="quick-search desktop">
+            <input type="text" name="search" placeholder="Поиск"/>
+            <button type="submit"></button>
+            <div class="search-wrap">
+                <ul id="search-result"></ul>
+            </div>
+        </form>
+
+        <ul class="nav bar desktop">
+            <li class="dropdown">
+                <a href="#">
+                    <img src="https://secure.gravatar.com/avatar/aa7384f659a1c0cfb7ae369c597531cc"
+                         alt="Фото пользователя"/>
+                </a>
+                <div class="dropdown-menu">
+                    <ul class="nav">
+                        <li><a href="#">Панель управления</a></li>
+                        <li><a href="#">Заказы <b>(2)</b></a></li>
+                        <li><a href="#">Вознаграждения</a></li>
+                        <li><a href="#">Выйти</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Войти</a></li>
+        </ul>
+        <div class="minicart desktop">
+            <div class="subtotal">30 600 <sup>₽</sup></div>
+            <a href="#" class="btn btn-primary">Корзина</a>
+        </div>
+
+        <a href="#" class="icon icon-search mobile"></a>
+
+    </div>
+</header>
+
+<nav class="menu">
+    <div class="container">
+        <ul class="nav bar">
+            <li class="dropdown">
+                <a href="#">Книги <b>(новинки)</b></a>
+                <div class="dropdown-menu">
+                    <ul class="nav">
+                        <li><a href="#">Панель управления</a></li>
+                        <li><a href="#">Заказы <b>(2)</b></a></li>
+                        <li><a href="#">Вознаграждения</a></li>
+                        <li><a href="#">Выйти</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Журналы</a></li>
+            <li><a href="#">Тренинги</a></li>
+            <li><a href="#">Очень длинное название рубрики</a></li>
+        </ul>
+        <ul class="nav bar">
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </div>
+</nav>
+
+<nav class="breadcrumbs">
+    <div class="container">
+        <ul class="nav bar">
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">Магазин</a></li>
+            <li><a href="#">Книги</a></li>
+        </ul>
+        <header>
+            <h1>Добрая и хорошая книга</h1>
+            <div class="controls">
+                <select>
+                    <option selected="selected" disabled="disabled">Сортировать по</option>
+                    <option>Default</option>
+                    <option>Price</option>
+                    <option>Rating</option>
+                </select>
+            </div>
+        </header>
+    </div>
+</nav>
+
+<div class="container with-sidebar section">
+
+    <aside>
+        <nav class="collapsed card">
+            <header class="toggle-active active">
+                <h3>Категории</h3>
+            </header>
+            <ul class="nav">
+                <li><a href="#">Книги</a></li>
+                <li class="active"><a href="#">Журналы</a></li>
+                <li><a href="#">Тренинги</a></li>
+                <li><a href="#">Очень длинное название рубрики</a></li>
+            </ul>
+        </nav>
+
+
+        <nav class="collapsed card">
+            <header class="toggle-active active">
+                <h3>Мой заказ <span>48 000 руб</span></h3>
+            </header>
+            <div class="card-body">
+                Некий текст
+            </div>
+            <footer>
+                <button type="button" class="btn btn-primary">Оформить заказ</button>
+            </footer>
+        </nav>
+
+    </aside>
+
+    <main>
+        <header class="desktop">
+            <h2>Функциональное питание</h2>
+            <div class="controls">
+                <select>
+                    <option selected="selected" disabled="disabled">Сортировать по</option>
+                    <option>Default</option>
+                    <option>Price</option>
+                    <option>Rating</option>
+                </select>
+            </div>
+        </header>
+        <div class="products">
+            <div class="product card">
+                <div class="images as-tile">
+                    <img src="img/product.jpg" alt="Фрукты"/>
+                </div>
+                <div class="details">
+                    <h3>Персик</h3>
+                    <p>Растение из подрода Миндаль рода Слива семейства Розовые. Является культигеном, возникшим в
+                        результате множественной интрогрессивной гибридизации между: персиком гансуанским, персиком
+                        удивительным, персиком Давида, миндалём обыкновенным, сливой китайской, абрикосом обыкновенным,
+                        алычой.</p>
+                    <div class="price">15 000 ₽</div>
+
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="images as-tile">
+                    <img src="img/product.jpg" alt="Фрукты"/>
+                </div>
+                <div class="details">
+                    <h3>Виноград</h3>
+                    <div class="price">15 000 ₽</div>
+
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <nav class="pagination">
+                <ul class="nav bar">
+                    <li class=" active"><a href="#">1</a></li>
+                    <li class=""><a href="#">2</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </main>
+</div>
+
+<main class="container section">
+    <div class="product single">
+        <div class="images as-tile">
+            <a class="zoom" href="img/product-large.jpg">
+                <img src="img/product.jpg" alt="">
+            </a>
+            <div class="thumbs">
+                <img src="img/product.jpg" alt="">
+                <img src="img/product.jpg" alt="">
+                <img src="img/product.jpg" alt="">
+            </div>
+        </div>
+        <div class="details">
+            <h3>Персик</h3>
+            <p class="product-category">Фрукты</p>
+            <p>Растение из подрода Миндаль рода Слива семейства Розовые. Является культигеном, возникшим в результате
+                множественной интрогрессивной гибридизации между: персиком гансуанским, персиком удивительным, персиком
+                Давида, миндалём обыкновенным, сливой китайской, абрикосом обыкновенным, алычой.</p>
+
+            <div class="price">15 000 ₽</div>
+
+            <div class="purchase">
+                <div class="control-quantity">
+                    <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                        <span>Купить</span>
+                    </button>
+                    <div class="complex btn btn-primary">
+                        <button class="minus"></button>
+                        <span class="amount">5</span><i class="icon icon-cart"></i>
+                        <button class="plus"></button>
+                    </div>
+
+                </div>
+                <a class="btn btn-icon btn-icon-like"></a>
+                <a class="btn btn-icon btn-icon-share"></a>
+            </div>
+        </div>
+    </div>
+    <nav class="tabs">
+        <ul class="nav bar">
+            <li class="active"><a href="#tab1">Описание</a></li>
+            <li class=""><a href="#tab2">Таблица</a></li>
+            <li class=""><a href="#tab3">Другое</a></li>
+        </ul>
+    </nav>
+    <div id="tab1" class="tab active">
+        <p>Понятие <strong>атомной массы</strong> ввёл Джон Дальтон в 1803 году, единицей измерения атомной массы
+            сначала служила масса атома водорода (так называемая водородная шкала). В 1818 году Берцелиус опубликовал
+            таблицу атомных масс, отнесённых к атомной массе кислорода, принятой равной 103. Система атомных масс
+            Берцелиуса господствовала до 1860-х годов, когда химики опять приняли водородную шкалу. Но в 1906 году они
+            перешли на кислородную шкалу, по которой за единицу атомной массы принимали 1⁄16 часть атомной массы
+            кислорода. После открытия изотопов кислорода (16O, 17O, 18O) атомные массы стали указывать по двум шкалам:
+            химической, в основе которой лежала 1⁄16 часть средней массы атома природного кислорода, и физической с
+            единицей массы, равной 1⁄16 массы атома нуклида 16O. Использование двух шкал имело ряд недостатков, поэтому
+            в 1960 году сначала X Генеральная ассамблея Международного союза теоретической и прикладной физики (ИЮПАП),
+            а в 1961 году и конгресс Международного союза теоретической и прикладной химии (ИЮПАК) приняли углеродную
+            шкалу[8].</p>
+
+
+        <h4>Единицы массы в науке</h4>
+
+        <ul>
+            <li>Атомная единица массы (а. е. м., дальтон) = 1,660 538 921(73)⋅10−27 кг = 1,660 538 921(73)⋅10−24 г[5] (в
+                химии высокомолекулярных соединений и биохимии применяются также кратные единицы килодальтон,
+                мегадальтон).
+            </li>
+            <li>Солнечная масса M☉ = 1,98847(7)⋅1030 кг</li>
+            <li>Электронвольт, 1 эВ = 1,782 661 845(39)⋅10−36 кг[8][9]; применяются также кратные (килоэлектронвольт,
+                кэВ; мегаэлектронвольт, МэВ, гигаэлектронвольт, ГэВ; тераэлектронвольт, ТэВ) и дольные
+                (миллиэлектронвольт, мэВ) единицы.
+            </li>
+            <li>Масса электрона me = 9,109 382 91(40)⋅10−31 кг</li>
+            <li>Масса протона mp = 1,672 621 777(74)⋅10−27 кг</li>
+            <li>Планковская единица массы MPl = 2,176 51(13)⋅10−8 кг</li>
+        </ul>
+    </div>
+    <div id="tab2" class="tab">
+        <p>Понятие атомной массы ввёл Джон Дальтон в 1803 году, единицей измерения атомной массы сначала служила масса
+            атома водорода (так называемая водородная шкала). В 1818 году Берцелиус опубликовал таблицу атомных масс,
+            отнесённых к атомной массе кислорода, принятой равной 103. Система атомных масс Берцелиуса господствовала до
+            1860-х годов, когда химики опять приняли водородную шкалу. Но в 1906 году они перешли на кислородную шкалу,
+            по которой за единицу атомной массы принимали 1⁄16 часть атомной массы кислорода. После открытия изотопов
+            кислорода (16O, 17O, 18O) атомные массы стали указывать по двум шкалам: химической, в основе которой лежала
+            1⁄16 часть средней массы атома природного кислорода, и физической с единицей массы, равной 1⁄16 массы атома
+            нуклида 16O. Использование двух шкал имело ряд недостатков, поэтому в 1960 году сначала X Генеральная
+            ассамблея Международного союза теоретической и прикладной физики (ИЮПАП), а в 1961 году и конгресс
+            Международного союза теоретической и прикладной химии (ИЮПАК) приняли углеродную шкалу[8].</p>
+
+        <div class="table">
+
+            <table>
+
+                <tbody>
+                <tr>
+                    <th colspan="4">Кратные
+                    </th>
+                    <th colspan="4">Дольные
+                    </th>
+                </tr>
+                <tr>
+                    <th>величина
+                    </th>
+                    <th>название
+                    </th>
+                    <th colspan="2">обозначение
+                    </th>
+                    <th>величина
+                    </th>
+                    <th>название
+                    </th>
+                    <th colspan="2">обозначение
+                    </th>
+                </tr>
+                <tr>
+                    <th>10<sup>1</sup> Да
+                    </th>
+                    <td>декадальтон
+                    </td>
+                    <td>даДа
+                    </td>
+                    <td>daDa
+                    </td>
+                    <th>10<sup>−1</sup> Да
+                    </th>
+                    <td>децидальтон
+                    </td>
+                    <td>дДа
+                    </td>
+                    <td>dDa
+                    </td>
+                </tr>
+                <tr>
+                    <th>10<sup>2</sup> Да
+                    </th>
+                    <td>гектодальтон
+                    </td>
+                    <td>гДа
+                    </td>
+                    <td>hDa
+                    </td>
+                    <th>10<sup>−2</sup> Да
+                    </th>
+                    <td>сантидальтон
+                    </td>
+                    <td>сДа
+                    </td>
+                    <td>cDa
+                    </td>
+                </tr>
+                <tr>
+                    <th>10<sup>3</sup> Да
+                    </th>
+                    <td>килодальтон
+                    </td>
+                    <td>кДа
+                    </td>
+                    <td>kDa
+                    </td>
+                    <th>10<sup>−3</sup> Да
+                    </th>
+                    <td>миллидальтон
+                    </td>
+                    <td>мДа
+                    </td>
+                    <td>mDa
+                    </td>
+                </tr>
+                <tr>
+                    <th>10<sup>6</sup> Да
+                    </th>
+                    <td>мегадальтон
+                    </td>
+                    <td>МДа
+                    </td>
+                    <td>MDa
+                    </td>
+                    <th>10<sup>−6</sup> Да
+                    </th>
+                    <td>микродальтон
+                    </td>
+                    <td>мкДа
+                    </td>
+                    <td>µDa
+                    </td>
+                </tr>
+                <tr>
+                    <th>10<sup>9</sup> Да
+                    </th>
+                    <td>гигадальтон
+                    </td>
+                    <td>ГДа
+                    </td>
+                    <td>GDa
+                    </td>
+                    <th>10<sup>−9</sup> Да
+                    </th>
+                    <td>нанодальтон
+                    </td>
+                    <td>нДа
+                    </td>
+                    <td>nDa
+                    </td>
+                </tr>
+                <tr>
+                    <th>10<sup>12</sup> Да
+                    </th>
+                    <td>терадальтон
+                    </td>
+                    <td>ТДа
+                    </td>
+                    <td>TDa
+                    </td>
+                    <th>10<sup>−12</sup> Да
+                    </th>
+                    <td>пикодальтон
+                    </td>
+                    <td>пДа
+                    </td>
+                    <td>pDa
+                    </td>
+                </tr>
+                <tr>
+                    <th>10<sup>15</sup> Да
+                    </th>
+                    <td>петадальтон
+                    </td>
+                    <td>ПДа
+                    </td>
+                    <td>PDa
+                    </td>
+                    <th>10<sup>−15</sup> Да
+                    </th>
+                    <td>фемтодальтон
+                    </td>
+                    <td>фДа
+                    </td>
+                    <td>fDa
+                    </td>
+                </tr>
+                <tr>
+                    <th>10<sup>18</sup> Да
+                    </th>
+                    <td>эксадальтон
+                    </td>
+                    <td>ЭДа
+                    </td>
+                    <td>EDa
+                    </td>
+                    <th>10<sup>−18</sup> Да
+                    </th>
+                    <td>аттодальтон
+                    </td>
+                    <td>аДа
+                    </td>
+                    <td>aDa
+                    </td>
+                </tr>
+                <tr>
+                    <th>10<sup>21</sup> Да
+                    </th>
+                    <td>зеттадальтон
+                    </td>
+                    <td>ЗДа
+                    </td>
+                    <td>ZDa
+                    </td>
+                    <th>10<sup>−21</sup> Да
+                    </th>
+                    <td>зептодальтон
+                    </td>
+                    <td>зДа
+                    </td>
+                    <td>zDa
+                    </td>
+                </tr>
+                <tr>
+                    <th>10<sup>24</sup> Да
+                    </th>
+                    <td>иоттадальтон
+                    </td>
+                    <td>ИДа
+                    </td>
+                    <td>YDa
+                    </td>
+                    <th>10<sup>−24</sup> Да
+                    </th>
+                    <td>иоктодальтон
+                    </td>
+                    <td>иДа
+                    </td>
+                    <td>yDa
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>Атомная единица массы</h4>
+
+        <p>А́томная едини́ца ма́ссы (русское обозначение: а. е. м.[1]; международное: u), она же дальто́н (русское
+            обозначение: Да, международное: Da), она же углеродная единица[2] — внесистемная единица массы, применяемая
+            для масс молекул, атомов, атомных ядер и элементарных частиц. Атомная единица массы определяется как 1⁄238
+            массы свободного покоящегося атома урана 238U, находящегося в основном состоянии[3].</p>
+
+        <p>Атомная единица массы не является единицей Международной системы единиц (СИ), но Международный комитет мер и
+            весов относит её к единицам, допустимым к применению наравне с единицами СИ[3]. В Российской Федерации она
+            допущена для использования в качестве внесистемной единицы без ограничения срока действия допуска с областью
+            применения «атомная физика»[1]. В соответствии с ГОСТ 8.417-2002 и «Положением о единицах величин,
+            допускаемых к применению в Российской Федерации», наименование и обозначение единицы «атомная единица массы»
+            не допускается применять с дольными и кратными приставками СИ[1][4]. Однако дольные и кратные единицы
+            допустимы для использования с синонимичным названием единицы «дальтон»; например, массы биологических
+            макромолекул часто выражаются в килодальтонах (кДа) и мегадальтонах (МДа), а чувствительность
+            масс-спектрометрической аппаратуры может выражаться в миллидальтонах (мДа) и микродальтонах (мкДа).</p>
+
+        <p>Рекомендована к применению ИЮПАП в 1960 и ИЮПАК в 1961 годах. Официально рекомендованными являются
+            англоязычные термины atomic mass unit (a. m. u.) и более точный unified atomic mass unit (u. a. m. u.) —
+            «универсальная атомная единица массы»; в русскоязычных научных и технических источниках последний
+            употребляется реже.</p>
+
+    </div>
+    <div id="tab3" class="tab">
+        <p><strong>Атомная единица массы:</strong>&nbsp;А́томная едини́ца ма́ссы (русское обозначение: а. е. м.[1];
+            международное: u), она же дальто́н (русское обозначение: Да, международное: Da), она же углеродная
+            единица[2] — внесистемная единица массы, применяемая для масс молекул, атомов, атомных ядер и элементарных
+            частиц. Атомная единица массы определяется как 1⁄238 массы свободного покоящегося атома урана 238U,
+            находящегося в основном состоянии[3].</p>
+
+        <p>Атомная единица массы не является единицей Международной системы единиц (СИ), но Международный комитет мер и
+            весов относит её к единицам, допустимым к применению наравне с единицами СИ[3]. В Российской Федерации она
+            допущена для использования в качестве внесистемной единицы без ограничения срока действия допуска с областью
+            применения «атомная физика»[1]. В соответствии с ГОСТ 8.417-2002 и «Положением о единицах величин,
+            допускаемых к применению в Российской Федерации», наименование и обозначение единицы «атомная единица массы»
+            не допускается применять с дольными и кратными приставками СИ[1][4]. Однако дольные и кратные единицы
+            допустимы для использования с синонимичным названием единицы «дальтон»; например, массы биологических
+            макромолекул часто выражаются в килодальтонах (кДа) и мегадальтонах (МДа), а чувствительность
+            масс-спектрометрической аппаратуры может выражаться в миллидальтонах (мДа) и микродальтонах (мкДа).</p>
+
+        <p>Рекомендована к применению ИЮПАП в 1960 и ИЮПАК в 1961 годах. Официально рекомендованными являются
+            англоязычные термины atomic mass unit (a. m. u.) и более точный unified atomic mass unit (u. a. m. u.) —
+            «универсальная атомная единица массы»; в русскоязычных научных и технических источниках последний
+            употребляется реже.</p>
+
+    </div>
+</main>
+
+<div class="container with-sidebar section">
+    <aside>
+        <nav class="collapsed card">
+            <header class="toggle-active active">
+                <h3>Категории</h3>
+            </header>
+            <ul class="nav">
+                <li><a href="#">Книги</a></li>
+                <li class="active"><a href="#">Журналы</a></li>
+                <li><a href="#">Тренинги</a></li>
+                <li><a href="#">Очень длинное название рубрики</a></li>
+            </ul>
+        </nav>
+
+    </aside>
+    <main>
+        <div class="news tiles">
+            <a class="compact card" href="#">
+                <img class="image" src="img/product.jpg"
+                     alt="Открылась продажа Нового онлайн-курса! ">
+                <div class="card-body">
+                    <time>01.01.2022</time>
+                    <h3>Новый год уж точно будет лучше предыдущего ковидного!</h3>
+                </div>
+            </a>
+            <a class="compact card" href="#">
+                <img class="image"
+                     src="img/product.jpg"
+                     alt="Money Fest">
+                <div class="card-body">
+                    <time>08.03.2022</time>
+                    <h3>С восьмым марта, дорогие женщины!</h3>
+                    <p>Наконец этот прекрасный весенний праздник</p>
+                </div>
+            </a>
+            <a class="compact card" href="#">
+                <img class="image"
+                     src="img/product.jpg"
+                     alt="Money Fest">
+                <div class="card-body">
+                    <time>01.05.2022</time>
+                    <h3>С днем труда!</h3>
+                    <p>Нужно хорошенько потрудиться</p>
+                </div>
+            </a>
+        </div>
+    </main>
+</div>
+
+<div class="container with-sidebar section">
+    <aside>
+        <nav class="collapsed card">
+            <header class="toggle-active active">
+                <h3>Категории</h3>
+            </header>
+            <ul class="nav">
+                <li><a href="#">Книги</a></li>
+                <li class="active"><a href="#">Журналы</a></li>
+                <li><a href="#">Тренинги</a></li>
+                <li><a href="#">Очень длинное название рубрики</a></li>
+            </ul>
+        </nav>
+
+    </aside>
+    <main>
+        <article>
+            <time>01.09.2022</time>
+            <h2>Атомная единица массы</h2>
+
+            <p>А́томная едини́ца ма́ссы (русское обозначение: а. е. м.[1]; международное: u), она же дальто́н (русское
+                обозначение: Да, международное: Da), она же углеродная единица[2] — внесистемная единица массы,
+                применяемая для масс молекул, атомов, атомных ядер и элементарных частиц. Атомная единица массы
+                определяется как 1⁄238 массы свободного покоящегося атома урана 238U, находящегося в основном
+                состоянии[3].</p>
+
+            <p>Атомная единица массы не является единицей Международной системы единиц (СИ), но Международный комитет
+                мер и весов относит её к единицам, допустимым к применению наравне с единицами СИ[3]. В Российской
+                Федерации она допущена для использования в качестве внесистемной единицы без ограничения срока действия
+                допуска с областью применения «атомная физика»[1]. В соответствии с ГОСТ 8.417-2002 и «Положением о
+                единицах величин, допускаемых к применению в Российской Федерации», наименование и обозначение единицы
+                «атомная единица массы» не допускается применять с дольными и кратными приставками СИ[1][4]. Однако
+                дольные и кратные единицы допустимы для использования с синонимичным названием единицы «дальтон»;
+                например, массы биологических макромолекул часто выражаются в килодальтонах (кДа) и мегадальтонах (МДа),
+                а чувствительность масс-спектрометрической аппаратуры может выражаться в миллидальтонах (мДа) и
+                микродальтонах (мкДа).</p>
+
+            <p>Рекомендована к применению ИЮПАП в 1960 и ИЮПАК в 1961 годах. Официально рекомендованными являются
+                англоязычные термины atomic mass unit (a. m. u.) и более точный unified atomic mass unit (u. a. m. u.) —
+                «универсальная атомная единица массы»; в русскоязычных научных и технических источниках последний
+                употребляется реже.</p>
+
+            <ul>
+                <li>Книги</li>
+                <li>Журналы</li>
+                <li>Фрукты</li>
+                <li>Виноград</li>
+                <li>Яблоко</li>
+                <li>Бананы</li>
+            </ul>
+
+            <p>
+                Вход: <a href="#">http://test.com</a>
+            </p>
+
+        </article>
+    </main>
+</div>
+
+<section class="catalog section">
+    <div class="container">
+        <header>
+            <h2>Каталог</h2>
+            <div class="controls">
+                <select>
+                    <option selected="selected" disabled="disabled">Сортировать по</option>
+                    <option>Default</option>
+                    <option>Price</option>
+                    <option>Rating</option>
+                </select>
+            </div>
+        </header>
+        <div class="products tiles">
+            <div class="product card">
+                <div class="top">
+                    <div class="badges">
+                        <div class="badge badge-new">New</div>
+                        <div class="badge badge-soon">Soon</div>
+                    </div>
+                </div>
+                <img class="image" src="img/product.jpg" alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3>Виноград</h3>
+                        <div class="price">1 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="top">
+                    <div class="badges">
+                        <div class="badge badge-soon">
+                            Soon
+                        </div>
+                        <div class="badge badge-offer">
+                            Offer
+                        </div>
+                    </div>
+                </div>
+                <img class="image" src="img/product.jpg" alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3>Персик</h3>
+                        <p>Растение из подрода Миндаль рода Слива семейства Розовые. Является культигеном, возникшим в
+                            результате множественной интрогрессивной гибридизации между: персиком гансуанским, персиком
+                            удивительным, персиком Давида, миндалём обыкновенным, сливой китайской, абрикосом
+                            обыкновенным, алычой.</p>
+                        <div class="price">12 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="top">
+                    <div class="badges">
+                        <div class="badge badge-sale">Sale</div>
+                        <div class="badge badge-offer">Offer</div>
+                    </div>
+                </div>
+                <img class="image" src="img/product.jpg" alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3 class="product-title">Яблоко</h3>
+                        <div class="price">14808.51 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="top">
+                    <div class="badges"></div>
+                </div>
+                <img class="image"
+                     src="img/product.jpg"
+                     alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3 class="product-title">Лайм</h3>
+
+                        <div class="price">3063.83 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="top">
+                    <div class="badges"></div>
+                </div>
+                <img class="image"
+                     src="img/product.jpg"
+                     alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3 class="product-title">Лимон</h3>
+
+                        <div class="price">12765.96 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="top">
+                    <div class="badges"></div>
+                </div>
+                <img class="image"
+                     src="img/product.jpg"
+                     alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3 class="product-title">Вишня</h3>
+
+                        <div class="price">9702.13 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="top">
+                    <div class="badges"></div>
+                </div>
+                <img class="image"
+                     src="img/product.jpg"
+                     alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3 class="product-title">Набор: вишня и лимон</h3>
+
+                        <div class="price">4851.06 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="top">
+                    <div class="badges"></div>
+                </div>
+                <img class="image"
+                     src="img/product.jpg"
+                     alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3 class="product-title">Набор: виноград и персик</h3>
+
+                        <div class="price">12765.96 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="top">
+                    <div class="badges"></div>
+                </div>
+                <img class="image"
+                     src="img/product.jpg"
+                     alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3 class="product-title">Набор: лайм и яблоко</h3>
+
+                        <div class="price">12765.96 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="top">
+                    <div class="badges"></div>
+                </div>
+                <img class="image" src="img/product.jpg" alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3 class="product-title">Набор: яблоко и персик</h3>
+                        <div class="price">12 345 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+
+    <div class="container">
+
+        <div class="alert alert-danger">Опасное действие может быть опасным.</div>
+        <form class="form card">
+
+
+            <div class="alert alert-warning">Если переходить дорогу на красный свет светофора, то может случиться
+                всякое.
+            </div>
+            <div class="alert alert-info">
+                Оформите личный кабинет, если у вас еще нет личного кабинета, и получите промокод.
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Страна *</label>
+                <select class="form-control" name="country_key">
+                    <option value="" selected="selected"></option>
+                    <option value="ru">Россия</option>
+                    <option value="by">Белоруссия</option>
+                    <option value="kz">Казахстан</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Email</label>
+                <input type="text" class="form-control" value="">
+            </div>
+            <div class="form-group">
+                <input type="radio" name="gender" value="male" id="gender_male">
+                <label for="gender_male">Мужчина</label>
+            </div>
+            <div class="form-group">
+                <input type="radio" name="gender" value="female" id="gender_female">
+                <label for="gender_female">Женщина</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Телефон</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" spellcheck="false">
+                    <button type="button" class="link form-control-after">Проверить</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="agree_order" value="Y" id="agree_order">
+                <label for="agree_order">Я проинформирован об условиях</label>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="confirm_order" value="Y" id="confirm_order">
+                <label for="confirm_order">Согласен, со всем согласен</label>
+            </div>
+            <div class="buttons">
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <button type="button" class="btn btn-info">Распечатать</button>
+                <button type="button" class="btn">Отправить</button>
+                <button class="link">Отменить</button>
+            </div>
+        </form>
+
+    </div>
+
+</section>
+
+<aside class="delivery-address popup popup-dialog popup-wide">
+    <header>
+        <button type="button" class="close" data-close-modal></button>
+        <h3>Заполните адрес</h3>
+    </header>
+    <form class="form pina-form delivery-address-form" action="" method="get">
+        <div class="form-group">
+            <label class="control-label">Страна *</label>
+            <select class="form-control" name="country_key">
+                <option value="" selected="selected"></option>
+                <option value="ru">Россия</option>
+                <option value="by">Белоруссия</option>
+                <option value="kz">Казахстан</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Почтовый индекс</label>
+            <div class="input-group">
+                <input type="text" class="form-control" name="zip"/>
+                <button type="button" class="link form-control-after">Применить</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Город</label>
+            <input type="text" class="form-control" name="city"/>
+        </div>
+        <div class="cl61577e3671039 form-group">
+            <label class="control-label">Полный адрес: город, улица, дом, корпус/строение, квартира</label>
+            <input type="text" class="form-control" name="address"/>
+        </div>
+        <div class="buttons">
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+            <button class="link" data-close-modal>Отменить</button>
+        </div>
+    </form>
+</aside>
+
+<nav class="modal-bottom">
+    <div class="close-swipe"></div>
+    <ul class="nav">
+        <li><a href="#">Панель управления</a></li>
+        <li><a href="#">Заказы</a></li>
+        <li><a href="#">Вознаграждения</a></li>
+        <li><a href="#">Выйти</a></li>
+    </ul>
+</nav>
+
+<nav class="bottom mobile">
+    <div class="container">
+        <ul class="nav bar">
+            <li>
+                <a href="#">
+                    <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="none" stroke-width="1">
+                            <g id="ic_fluent_library_28_filled">
+                                <path d="M5.9897,3 C7.0937,3 7.9897,3.896 7.9897,5 L7.9897,23 C7.9897,24.104 7.0937,25 5.9897,25 L4.0007,25 C2.8957,25 2.0007,24.104 2.0007,23 L2.0007,5 C2.0007,3.896 2.8957,3 4.0007,3 L5.9897,3 Z M12.9897,3 C14.0937,3 14.9897,3.896 14.9897,5 L14.9897,23 C14.9897,24.104 14.0937,25 12.9897,25 L10.9947,25 C9.8897,25 8.9947,24.104 8.9947,23 L8.9947,5 C8.9947,3.896 9.8897,3 10.9947,3 L12.9897,3 Z M22.0701,6.5432 L25.9301,22.0262 C26.1971,23.0972 25.5441,24.1832 24.4731,24.4512 L22.5101,24.9402 C21.4391,25.2072 20.3531,24.5552 20.0861,23.4832 L16.2261,8.0002 C15.9581,6.9282 16.6111,5.8432 17.6821,5.5752 L19.6451,5.0862 C20.7161,4.8182 21.8021,5.4712 22.0701,6.5432 Z" id="🎨-Color"></path>
+                            </g>
+                        </g>
+                    </svg>
+                    <span>Каталог</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <mask id="path-1-inside-1" fill="white"><path d="M9.9 18C9.61812 18 9.34636 17.8957 9.13457 17.7061C8.33469 16.9914 7.56352 16.3198 6.88314 15.7274L6.87967 15.7243C4.88489 13.9873 3.16233 12.4873 1.96381 11.0096C0.624037 9.35765 0 7.79138 0 6.08032C0 4.41788 0.557872 2.88418 1.57074 1.76153C2.5957 0.625613 4.00209 0 5.53129 0C6.67422 0 7.72093 0.369224 8.64226 1.09733C9.34918 1.6561 10.4509 1.65599 11.1579 1.09733C12.0792 0.369224 13.1259 0 14.2689 0C15.7979 0 17.2045 0.625613 18.2294 1.76153C19.2423 2.88418 19.8 4.41788 19.8 6.08032C19.8 7.79138 19.1761 9.35765 17.8363 11.0094C16.6378 12.4873 14.9154 13.9872 12.9209 15.724C12.2393 16.3173 11.467 16.99 10.6653 17.7064C10.4536 17.8957 10.1817 18 9.9 18Z"></path></mask>
+                            <path d="M9.9 18C9.61812 18 9.34636 17.8957 9.13457 17.7061C8.33469 16.9914 7.56352 16.3198 6.88314 15.7274L6.87967 15.7243C4.88489 13.9873 3.16233 12.4873 1.96381 11.0096C0.624037 9.35765 0 7.79138 0 6.08032C0 4.41788 0.557872 2.88418 1.57074 1.76153C2.5957 0.625613 4.00209 0 5.53129 0C6.67422 0 7.72093 0.369224 8.64226 1.09733C9.34918 1.6561 10.4509 1.65599 11.1579 1.09733C12.0792 0.369224 13.1259 0 14.2689 0C15.7979 0 17.2045 0.625613 18.2294 1.76153C19.2423 2.88418 19.8 4.41788 19.8 6.08032C19.8 7.79138 19.1761 9.35765 17.8363 11.0094C16.6378 12.4873 14.9154 13.9872 12.9209 15.724C12.2393 16.3173 11.467 16.99 10.6653 17.7064C10.4536 17.8957 10.1817 18 9.9 18Z" stroke="" stroke-width="4" mask="url(#path-1-inside-1)"></path>
+                        </g>
+                    </svg>
+                    <span>Избранное</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-toggle-modal=".modal-bottom">
+                    <svg viewBox="0 0 12 12" enable-background="new 0 0 12 12" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                        <g><path d="M9.3005371,6.5351563C8.4776001,7.4294434,7.3084106,8,6,8S3.5223999,7.4294434,2.6994629,6.5351563   C1.3145142,7.2350464,0.5,8.6131592,0.5,10.5V12h11v-1.5C11.5,8.6131592,10.6854858,7.2350464,9.3005371,6.5351563z" /><circle cx="6" cy="3.5" r="3.5"/></g></svg>
+                    <span>Профиль</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
+                    <g><path d="M447.988,139.696c-0.156-2.084-1.9-3.696-3.988-3.696h-72v-20C372,52.036,319.96,0,256,0S140,52.036,140,116v20H68 c-2.088,0-3.832,1.612-3.988,3.696l-28,368c-0.084,1.108,0.296,2.204,1.056,3.02C37.824,511.536,38.888,512,40,512h432 c1.112,0,2.176-0.464,2.932-1.28c0.756-0.816,1.14-1.912,1.056-3.02L447.988,139.696z M172,116c0-46.316,37.68-84,84-84 s84,37.684,84,84v20H172V116z M156,248c-22.06,0-40-17.944-40-40c0-15.964,8-30.348,24-36.66V208c0,8.824,7.18,16,16,16 s16-7.176,16-16v-36.636c16,6.312,24,20.804,24,36.636C196,230.056,178.06,248,156,248z M356,248c-22.06,0-40-17.944-40-40 c0-15.964,8-30.348,24-36.66V208c0,8.824,7.18,16,16,16s16-7.176,16-16v-36.636c16,6.312,24,20.804,24,36.636 C396,230.056,378.06,248,356,248z"/></g>
+                    </svg>
+                    <span>Корзина</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<footer class="desktop">
+    <div class="container">
+        <div class="row">
+            <nav class="col social">
+                <ul class="nav bar">
+                    <li><a href="#" target="_blank">VK</a></li>
+                    <li><a href="#" target="_blank">FB</a></li>
+                    <li><a href="#" target="_blank">IN</a></li>
+                </ul>
+                <footer>
+                    <p class="legal">ИП Яшин Александр Владимирович</p>
+                    <p class="legal">г Ульяновск</p>
+                </footer>
+            </nav>
+            <nav class="col">
+                <ul class="nav">
+                    <li><a href="#"><strong>Каталог</strong></a></li>
+                    <li><a href="#">Книги</a></li>
+                    <li><a href="#">Журналы</a></li>
+                    <li><a href="#">Тренинги</a></li>
+                    <li><a href="#">Очень длинное название рубрики</a></li>
+                </ul>
+            </nav>
+            <nav class="col">
+                <ul class="nav">
+                    <li><a href="#">Очень длинное название рубрики</a></li>
+                    <li><a href="#">Тренинги</a></li>
+                    <li><a href="#">Журналы</a></li>
+                    <li><a href="#">Книги</a></li>
+                </ul>
+            </nav>
+            <nav class="col">
+                <ul class="nav">
+                    <li><a href="#"><strong>О компании</strong></a></li>
+                </ul>
+                <ul class="nav">
+                    <li><a href="#"><strong>Контакты</strong></a></li>
+                </ul>
+            </nav>
+        </div>
+        <p class="copyright">2022 ИП Яшин Александр Владимирович</p>
+    </div>
+</footer>
+
+<script src="../src/toggle-active.js"></script>
+<script src="../src/select/select.js"></script>
+<script src="../src/tabs/tabs.js"></script>
+<script src="../src/catalog/catalog.js"></script>
+<script src="../src/cart/cart.js"></script>
+<script src="../src/overlay/overlay.js"></script>
+<script src="../src/form/form.js"></script>
+
+<script src="demo.js"></script>
+</body>
+</html>

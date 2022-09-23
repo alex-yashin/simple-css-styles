@@ -1,0 +1,45 @@
+nav.tabs {
+    font-size: 1.5rem;
+    line-height: 3;
+    border-bottom: 1px solid #aaa;
+}
+
+nav.tabs ul li {
+    text-align: center;
+}
+
+nav.tabs ul li.active {
+    position: relative;
+}
+
+nav.tabs ul li.active a:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #aaa;
+    position: absolute;
+    left: 0;
+    bottom: -1px;/* чтобы заехала на полоску и перекрыло ее */
+}
+
+/* из-за наличия линии внизу и подчеркивания активного элемента можно не выравнивать текст по краю */
+nav.tabs ul.nav.bar > li:first-child > a {
+    margin-left: 0;
+}
+nav.tabs ul.nav.bar > li:last-child > a {
+    margin-right: 0;
+}
+
+.tab {
+    padding: 2rem 0;
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}
+
+/* в смешанном текстовом контенте картинки не должны выходить за границы этого контента и растягивать его */
+.tab img, .tab figure {
+    max-width: 100%;
+}
