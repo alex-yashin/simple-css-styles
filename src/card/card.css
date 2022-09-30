@@ -15,7 +15,7 @@
     position: relative;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: calc(320px * 3 + 1rem * 3)) {
     .card, .alert {
         padding: 1rem;
     }

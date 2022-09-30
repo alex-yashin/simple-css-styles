@@ -27,7 +27,7 @@ body.overlay-lock {
     z-index: 1001;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: calc(320px * 3 + 1rem * 2 + 1rem * 2)) {
     .popup {
         padding: 1rem;
     }

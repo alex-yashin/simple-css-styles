@@ -53,13 +53,8 @@
     .product .images {
         width: 100%;
         background: white;
-        border-radius: 1.5rem;
-        padding: 1rem;
+        border-radius: 1rem;
         overflow: hidden;
-    }
-
-    .product.single .images {
-        padding: 0;
     }
 
     .product .images img {
