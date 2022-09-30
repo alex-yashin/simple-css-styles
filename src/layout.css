@@ -158,7 +158,6 @@ body > section > .container > header, body > nav > .container > header, body > .
     .tiles > * {
         width: 49%;
         min-width: auto;
-        padding: 1rem;
     }
 
     .tiles > .card {
