@@ -1,8 +1,8 @@
 
 .modal-bottom {
     background: white;
-    padding: 1rem 1rem 6rem 1rem;
-    border-radius: 1rem 1rem 0 0;
+    padding: 16px 16px 96px 16px;
+    border-radius: 16px 16px 0 0;
     position: fixed;
     left: 0;
     width: 100%;
@@ -26,7 +26,7 @@
     content: '';
     display: block;
     height: 3px;
-    width: 1.5rem;
+    width: 24px;
     background: #e1e4ec;
     border-radius: 4px;
     margin: auto auto 1.25rem;

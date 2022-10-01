@@ -5,7 +5,7 @@ nav.breadcrumbs {
 }
 
 nav.breadcrumbs ul.nav.bar + header {
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 
 /* у последнего элемента не должно быть отступа снизу, чтобы отступ хлебных крошек смотрелся симметрично */

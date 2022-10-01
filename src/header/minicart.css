@@ -16,7 +16,7 @@ body > header > .container > .minicart {
 }
 
 .minicart > .subtotal {
-    padding: 0 0 0 1rem;
+    padding: 0 0 0 16px;
 }
 
 @media (min-width: 1000px) {
@@ -30,5 +30,5 @@ body > header > .container > .minicart {
 }
 
 .minicart > a {
-    padding: 1rem;
+    padding: 16px;
 }

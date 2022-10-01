@@ -61,7 +61,7 @@ ul.nav.bar > li > a > img {
     -webkit-box-shadow: 0 4px 40px rgba(217,218,224,.5);
     -moz-box-shadow: 0 4px 40px rgba(217,218,224,.5);
     z-index: 100;
-    border-radius: 0 0 1rem 1rem;
+    border-radius: 0 0 16px 16px;
 }
 
 .dropdown {

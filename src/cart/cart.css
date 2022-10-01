@@ -5,7 +5,7 @@
 /* группа кнопок покупки и др, например, избранное и шаринг */
 .purchase {
     display: flex;
-    gap: 1rem;
+    gap: 16px;
     max-width: 400px; /* максимальная ширина tiles */
 }
 
@@ -62,7 +62,7 @@
     display: none;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1040px) {
     .tiles .purchase, .tiles .control-quantity {
         min-width: auto;
     }
@@ -78,8 +78,8 @@
     }
 
     .tiles .purchase .simple.btn:before {
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 24px;
+        height: 24px;
         display: block;
     }
 

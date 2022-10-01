@@ -1,6 +1,6 @@
 select {
     border-radius: 24px;
-    padding: 0.75rem 2rem 0.75rem 1rem;
+    padding: 12px 32px 12px 16px;
     line-height: 1rem;
     font-weight: 700;
     margin: 0;
@@ -21,7 +21,7 @@ select {
     position: absolute;
     display: inline-block;
     line-height: 2.5rem; /* 0.75 + 0.75 + 1 */
-    margin-left: -1.5rem;
+    margin-left: -24px;
     vertical-align: top;
 }
 

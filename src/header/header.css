@@ -9,7 +9,7 @@ body > nav.menu ul + ul:last-child .dropdown-menu {
 }
 
 body > header.sticky {
-    padding: 1rem 0;
+    padding: 16px 0;
     position: fixed;
     top: 0;
     width: 100%;

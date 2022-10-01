@@ -8,22 +8,22 @@
 }
 
 /* на десктопе товар ведет себя как карточка */
-@media (min-width: 700px) {
+@media (min-width: 1041px) {
 
     .product.single .zoom {
         background: white;
-        border-radius: 1rem;
+        border-radius: 16px;
         overflow: hidden;
     }
 
     .product.single .zoom {
         display: block;
-        padding: 1.5rem;
+        padding: 24px;
     }
 
     .product {
         display: flex;
-        gap: 1.5rem;
+        gap: 24px;
     }
 
     .product .images, .product .images > a.zoom,  .images > a.zoom > img {
@@ -48,12 +48,12 @@
 
 }
 
-@media (max-width: 699px) {
+@media (max-width: 1040px) {
     /* а на мобилке вместо карточки-товара приклепленной слева карточкой становится изображение товара */
     .product .images {
         width: 100%;
         background: white;
-        border-radius: 1rem;
+        border-radius: 16px;
         overflow: hidden;
     }
 
@@ -62,7 +62,7 @@
     }
 
     .product .images + .details {
-        margin-top: 1rem;
+        margin-top: 16px;
     }
 
     /* а иконки на мобильных не показываем, вместо них листалка картинок */
@@ -87,10 +87,8 @@
         display: block;
         position: absolute;
         top: 0;
-        right: -1rem;
-        -webkit-border-radius: 1.5rem 0 0 1.5rem;
-        -moz-border-radius: 1.5rem 0 0 1.5rem;
-        border-radius: 1.5rem 0 0 1.5rem;
+        right: -16px;
+        border-radius: 24px 0 0 24px;
         padding: 0.5rem;
     }
 
@@ -130,8 +128,8 @@
 
 .product .zoom::after {
     position: absolute;
-    right: 1rem;
-    bottom: 1rem;
+    right: 16px;
+    bottom: 16px;
     background-image: url(size.svg);
     background-repeat: no-repeat;
     content: '';
@@ -140,13 +138,13 @@
 }
 
 .product .thumbs {
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 
 .product .thumbs img {
     width: 5rem;
     background: white;
-    border-radius: 1rem;
+    border-radius: 16px;
 }
 
 .product .product-category {
@@ -193,7 +191,7 @@
 
 /* товары в плитке */
 .tiles > .product.card {
-     padding: 1rem;
+     padding: 16px;
  }
 
 .tiles .product .top {
@@ -202,7 +200,7 @@
     position: absolute;
     left: 0;
     width: 100%;
-    padding: 0 1rem;
+    padding: 0 16px;
     box-sizing: border-box;
 }
 

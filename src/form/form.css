@@ -69,5 +69,5 @@
 }
 
 .form-group select.form-control + .select-button {
-    margin-left: -1rem;
+    margin-left: -16px;
 }

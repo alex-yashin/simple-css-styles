@@ -1,9 +1,9 @@
 .badge {
     display: inline-block;
-    border-radius: 1rem;
+    border-radius: 16px;
     font-size: 1rem;
     font-weight: bold;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 16px;
 }
 
 .badge + .badge {

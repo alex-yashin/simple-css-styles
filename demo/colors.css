@@ -24,7 +24,7 @@ body {
     color: #797979;
 }
 
-@media (max-width: 699px) {
+@media (max-width: 1040px) {
     .product .price {
         background: gray;
     }

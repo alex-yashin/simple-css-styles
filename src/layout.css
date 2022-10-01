@@ -1,69 +1,79 @@
+/*
+ контейнеры расчитываются исходя из того, что блоки в сетке тайлов могут быть шириной 320 пикселей и 400 пикселей,
+ а отступы 16 пикселей на маленьких разрешениях и 24 пикселя на больших
+ как только три тайла перестают помещаться в строчку, строчка фиксируются двумя тайлами и они начинают сжиматься до того,
+ пока не станет помещаться только один тайл.
+
+ Ограничение на медиа-запрос всегда на два отсупа больше, чем контейнер, чтобы от края экрана всегда был небольшой отступ
+ 400 (432)
+ 320 * 3 + 16 * 2 = 992 (1040)
+ 400 * 3 + 24 * 2 = 1248 (1296)
+ 400 * 4 + 24 * 3 = 1672 (1720)
+ 400 * 5 + 24 * 4 = 2096 (2144)
+ 400 * 6 + 24 * 5 = 2520 (2568)
+ 400 * 7 + 24 * 6 = 2944 (2992)
+ 400 * 8 + 24 * 7 = 3368 (3416)
+ 400 * 9 + 24 * 8 = 3792 (3840)
+
+ 1296 - переход на ширину тайла 320 пикселей и отступ 16 пикселей
+ 1040 - переход в мобильный режим на две тянущиеся колонки
+ 432 - переход в одноколоночный режим
+
+ */
+
 .container {
     position: relative;
-    width: calc(400px * 9 + 1.5rem * 8);
+    width: calc(400px * 9 + 24px * 8);
     margin: 0 auto;
     box-sizing: border-box;
 }
 
-/*
-    400 + 24 (gap) + 400 + 24 + 400, итого выходит 400 * n + 24 * (n-1)
-    824
-    1248
-    1672
-    2096
-    2520
-    2944
-    3368
-    3792
- */
-
-
-@media (max-width: calc(400px * 9 + 1.5rem * 8 + 1.5rem * 2)) {
+@media (max-width: 3840px) {
     .container {
-        width: calc(400px * 8 + 1.5rem * 7);
+        width: 3368px;
     }
 }
 
-@media (max-width: calc(400px * 8 + 1.5rem * 7 + 1.5rem * 2)) {
+@media (max-width: 3416px) {
     .container {
-        width: calc(400px * 7 + 1.5rem * 6);
+        width: 2944px;
     }
 }
 
-@media (max-width: calc(400px * 7 + 1.5rem * 6 + 1.5rem * 2)) {
+@media (max-width: 2992px) {
     .container {
-        width: calc(400px * 6 + 1.5rem * 5);
+        width: 2520px;
     }
 }
 
-@media (max-width: calc(400px * 6 + 1.5rem * 5 + 1.5rem * 2)) {
+@media (max-width: 2568px) {
     .container {
-        width: calc(400px * 5 + 1.5rem * 4);
+        width: 2096px;
     }
 }
 
-@media (max-width: calc(400px * 5 + 1.5rem * 4 + 1.5rem * 2)) {
+@media (max-width: 2144px) {
     .container {
-        width: calc(400px * 4 + 1.5rem * 3);
+        width: 1672px;
     }
 }
 
-@media (max-width: calc(400px * 4 + 1.5rem * 3 + 1.5rem * 2)) {
+@media (max-width: 1720px) {
     .container {
-        width: calc(400px * 3 + 1.5rem * 2);/* 400 * 3 + 24 * 2 */
+        width: 1248px;
     }
 }
 
-@media (max-width: calc(400px * 3 + 1.5rem * 2 + 1.5rem * 2)) {/* 1248 + 24 = 1272 + 24 = 1296 */
+@media (max-width: 1296px) {
     .container {
         width: auto;
-        max-width: calc(320px * 3 + 1rem * 2);/* 320 * 3 + 16 * 2 */
+        max-width: 992px;
     }
 }
 
-@media (max-width: calc(320px * 3 + 1rem * 2 + 1.5rem * 2)) {
+@media (max-width: 1040px) {
     .container {
-        margin: 0 1rem;
+        margin: 0 16px;
     }
 }
 
@@ -72,13 +82,13 @@
     margin-bottom: 2.5rem;
 }
 
-@media (max-width: calc(320px * 3 + 1rem * 2 + 1.5rem * 2)) {
+@media (max-width: 1040px) {
     .desktop {
         display: none !important;
     }
 }
 
-@media (min-width: calc(320px * 3 + 1rem * 2 + 1.5rem * 2 + 1px)) {
+@media (min-width: 1041px) {
     .mobile {
         display: none !important;
     }
@@ -94,10 +104,10 @@ body > section > .container > header, body > nav > .container > header, body > .
 /* плиточка */
 .tiles, .container.with-sidebar {
     display: flex;
-    gap: 1.5rem;
+    gap: 24px;
 }
 
-@media (max-width: calc(320px * 3 + 1rem * 2 + 1.5rem * 2)) {
+@media (max-width: 1040px) {
     body > .container.with-sidebar {
         display: block;
     }
@@ -116,12 +126,12 @@ body > section > .container > header, body > nav > .container > header, body > .
 
 /* все, что с фоном, должно быть с отступом между собой */
 .card + .card, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
-    margin-top: 1.5rem;
+    margin-top: 24px;
 }
 
-@media (max-width: calc(320px * 3 + 1rem * 2 + 1.5rem * 2)) {
+@media (max-width: 1040px) {
     .card + .card, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
-        margin-top: 1rem;
+        margin-top: 16px;
     }
 }
 
@@ -135,9 +145,9 @@ body > section > .container > header, body > nav > .container > header, body > .
     box-sizing: border-box;
 }
 
-@media (max-width: calc(400px * 3 + 1.5rem * 2 + 1.5rem * 2)) {/* 1248 + 24 = 1272 + 24 = 1296 */
+@media (max-width: 1296px) {
     .tiles, .container.with-sidebar {
-        gap: 1rem;
+        gap: 16px;
     }
     .tiles > *, .container.with-sidebar aside, .as-tile {
         min-width: 320px;
@@ -146,10 +156,10 @@ body > section > .container > header, body > nav > .container > header, body > .
 }
 
 /* на небольших экранах карточки в плитке лепим попарно */
-@media (max-width: calc(320px * 3 + 1rem * 2 + 1.5rem * 2)) {
+@media (max-width: 1040px) {
     .tiles {
-        margin-left: -1rem;
-        margin-right: -1rem;
+        margin-left: -16px;
+        margin-right: -16px;
         width: auto;
         justify-content: space-between;
         column-gap: 0;
@@ -161,16 +171,16 @@ body > section > .container > header, body > nav > .container > header, body > .
     }
 
     .tiles > .card {
-        border-radius: 0 1rem 1rem 0;
+        border-radius: 0 16px 16px 0;
     }
 
     .tiles > .card:nth-child(2n) {
-        border-radius: 1rem 0 0 1rem;
+        border-radius: 16px 0 0 16px;
     }
 }
 
 /* если ширина экрана небольшая, то все лепим в одну колонку */
-@media (max-width: calc(400px + 1rem * 2)) { /* 400 + 16 * 2 */
+@media (max-width: 432px) { /* 400 + 16 * 2 */
     .tiles {
         margin-left: 0;
         margin-right: 0;
@@ -183,13 +193,13 @@ body > section > .container > header, body > nav > .container > header, body > .
     }
 
     .tiles > .card, .tiles > .card:nth-child(2n) {
-        border-radius: 1rem;
+        border-radius: 16px;
     }
 }
 
 .row {
     display: flex;
-    gap: 1rem;
+    gap: 16px;
 }
 
 .row .col {
