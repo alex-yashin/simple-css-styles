@@ -18,7 +18,6 @@
  1296 - переход на ширину тайла 320 пикселей и отступ 16 пикселей
  1040 - переход в мобильный режим на две тянущиеся колонки
  432 - переход в одноколоночный режим
-
  */
 
 .container {
@@ -77,11 +76,6 @@
     }
 }
 
-.section {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
-}
-
 @media (max-width: 1040px) {
     .desktop {
         display: none !important;
@@ -94,15 +88,8 @@
     }
 }
 
-body > section > .container > header, body > nav > .container > header, body > .container > main > header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-/* плиточка */
-.tiles, .container.with-sidebar {
+/* плиточка и колонки */
+.tiles, .container.with-sidebar, .row {
     display: flex;
     gap: 24px;
 }
@@ -116,27 +103,13 @@ body > section > .container > header, body > nav > .container > header, body > .
     }
 }
 
+/* колонки равной ширины и не переносятся в отличие от плитки */
+.row > * {
+    flex: 1;
+}
+
 .tiles {
     flex-wrap: wrap;
-}
-
-.tiles > * > img {
-    width: 100%;
-}
-
-/* все, что с фоном, должно быть с отступом между собой */
-.card + .card, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
-    margin-top: 24px;
-}
-
-@media (max-width: 1040px) {
-    .card + .card, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
-        margin-top: 16px;
-    }
-}
-
-.tiles .card + .card {
-    margin-top: 0;
 }
 
 .tiles > *, .container.with-sidebar aside, .as-tile {
@@ -146,7 +119,7 @@ body > section > .container > header, body > nav > .container > header, body > .
 }
 
 @media (max-width: 1296px) {
-    .tiles, .container.with-sidebar {
+    .tiles, .container.with-sidebar, .row {
         gap: 16px;
     }
     .tiles > *, .container.with-sidebar aside, .as-tile {
@@ -197,11 +170,36 @@ body > section > .container > header, body > nav > .container > header, body > .
     }
 }
 
-.row {
-    display: flex;
-    gap: 16px;
+.tiles > * > img {
+    width: 100%;
 }
 
-.row .col {
-    flex: 1;
+
+/* отступы */
+.section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* все, что с фоном, должно быть с отступом между собой */
+.card + .card, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
+    margin-top: 24px;
+}
+
+@media (max-width: 1040px) {
+    .card + .card, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
+        margin-top: 16px;
+    }
+}
+
+.tiles .card + .card {
+    margin-top: 0;
+}
+
+/* другие элементы */
+body > section > .container > header, body > nav > .container > header, body > .container > main > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
