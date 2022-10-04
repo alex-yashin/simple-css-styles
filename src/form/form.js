@@ -12,19 +12,6 @@
         return getNearestParent(el.parentElement, cl);
     };
 
-    let onChange = function () {
-        let parent = getNearestParent(this, 'form-group');
-        if (!parent) {
-            return;
-        }
-
-        if (this.value !== "") {
-            parent.classList.add('filled');
-        } else {
-            parent.classList.remove('filled');
-        }
-    };
-
     let inputTextElements = document.querySelectorAll("input[type=text],input[type=number],input[type=password],textarea,select");
     for (let i = 0; i < inputTextElements.length; i++) {
 
@@ -41,15 +28,23 @@
                 return;
             }
             parent.classList.remove('focused');
-            onChange();
         });
-        inputTextElements[i].addEventListener('change', onChange);
+        inputTextElements[i].addEventListener('change', function() {
+            let parent = getNearestParent(this, 'form-group');
+            if (!parent) {
+                return;
+            }
+            if (this.value !== "") {
+                parent.classList.add('filled');
+            } else {
+                parent.classList.remove('filled');
+            }
+        });
         inputTextElements[i].addEventListener('focusin', function () {
             let parent = getNearestParent(this, 'form-group');
             if (!parent) {
                 return;
             }
-            parent.classList.add('filled');
             parent.classList.add('focused');
         });
     }

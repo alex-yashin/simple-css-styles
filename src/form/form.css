@@ -60,7 +60,7 @@
     will-change: transform;
 }
 
-.form-group.filled > label.control-label {
+.form-group.filled > label.control-label, .form-group.focused > label.control-label {
     transform: translateY(-140%);
 }
 
