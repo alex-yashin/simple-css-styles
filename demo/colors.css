@@ -97,6 +97,14 @@ nav.tabs ul li.active a:after {
     color: #666;
 }
 
+.form-group.focused .form-control, .form-group.focused .input-group {
+    border-color: orange;
+}
+
+.form-group.focused .control-label {
+    color: orange;
+}
+
 /* чекбокс */
 .form-group [type=checkbox]:checked+label:before,
 .form-group [type=radio]:checked+label:before

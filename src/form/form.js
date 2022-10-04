@@ -35,7 +35,14 @@
             }
         }
 
-        inputTextElements[i].addEventListener('focusout', onChange);
+        inputTextElements[i].addEventListener('focusout', function() {
+            let parent = getNearestParent(this, 'form-group');
+            if (!parent) {
+                return;
+            }
+            parent.classList.remove('focused');
+            onChange();
+        });
         inputTextElements[i].addEventListener('change', onChange);
         inputTextElements[i].addEventListener('focusin', function () {
             let parent = getNearestParent(this, 'form-group');
@@ -43,6 +50,7 @@
                 return;
             }
             parent.classList.add('filled');
+            parent.classList.add('focused');
         });
     }
 })();
