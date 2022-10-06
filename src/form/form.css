@@ -64,7 +64,7 @@
     transform: translateY(-140%);
 }
 
-.form-group .form-control + p, .form-group .form-control + .select-button + p {
+.form-group .form-control + p, .form-group .form-control + .select-button + p, .form-group .input-group + p {
     padding-top: 0.5rem;
 }
 

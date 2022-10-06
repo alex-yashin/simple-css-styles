@@ -93,7 +93,7 @@ nav.tabs ul li.active a:after {
     border-bottom: 1px solid #333;
 }
 
-.form-group > label.control-label, .form-group .form-control + p, .form-group .form-control + .select-button + p {
+.form-group > label.control-label, .form-group .form-control + p, .form-group .form-control + .select-button + p, .form-group .input-group + p {
     color: #666;
 }
 
