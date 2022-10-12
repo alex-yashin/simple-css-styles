@@ -147,8 +147,16 @@
         border-radius: 0 16px 16px 0;
     }
 
+    .tiles > .card.compact > *:first-child {
+        border-radius: 0 16px 0 0;
+    }
+
     .tiles > .card:nth-child(2n) {
         border-radius: 16px 0 0 16px;
+    }
+
+    .tiles > .card.compact:nth-child(2n) > *:first-child {
+        border-radius: 16px 0 0 0;
     }
 }
 
