@@ -9,6 +9,7 @@
 
 .form-group .form-control {
     border-radius: 0;
+    background: transparent;
     color: #333;
     font-size: 1rem;
     font-weight: normal;
