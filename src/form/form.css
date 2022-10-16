@@ -35,6 +35,7 @@
 
 .form-group .input-group {
     display: flex;
+    align-items: baseline;
 }
 
 
