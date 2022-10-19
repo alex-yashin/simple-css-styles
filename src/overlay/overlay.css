@@ -25,6 +25,7 @@ body.overlay-lock {
     overflow-y: auto;
     position: fixed;
     z-index: 1001;
+    box-sizing: border-box;
 }
 
 @media (max-width: 1296px) {
