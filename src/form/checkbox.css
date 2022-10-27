@@ -83,26 +83,3 @@
 .form-group [type=checkbox]:checked+label:after {
     border-color: #fff
 }
-
-@media (max-device-width: 899px) {
-    .form-group [type="radio"] + label:before,
-    .form-group [type="checkbox"] + label:before
-    {
-        left: auto;
-        right: 0;
-    }
-    .form-group [type="radio"] + label:after,
-    .form-group [type="checkbox"] + label:after
-    {
-        left: auto;
-        right: 0.4375em;
-    }
-
-    .form-group [type="radio"] + label,
-    .form-group [type="checkbox"] + label,
-    .form-group [type="radio"] + label + p,
-    .form-group [type="checkbox"] + label + p {
-        padding: 0 1.5em 0 0;
-    }
-
-}
