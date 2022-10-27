@@ -1,5 +1,3 @@
-@import "quick-search.css";
-@import "minicart.css";
 @import "breadcrumbs.css";
 @import "side.css";
 
@@ -35,10 +33,7 @@ body > header > .container > .icon-burger
 
 /* меню: nav.menu > .container > ul.nav.bar > li > a */
 nav.menu {
-    width: 100%;
     line-height: 3.75rem;
-    font-weight: bold;
-    background: white;
     white-space: nowrap;
     box-sizing: border-box;
 }

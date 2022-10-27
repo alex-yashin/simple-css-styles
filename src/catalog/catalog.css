@@ -83,15 +83,6 @@
         padding: 0.5rem 0;
     }
 
-    .product .price {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: -16px;
-        border-radius: 24px 0 0 24px;
-        padding: 0.5rem;
-    }
-
     nav.tabs {
         font-size: 1rem;
         font-weight: bold;

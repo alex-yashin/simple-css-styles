@@ -1,6 +1,6 @@
 
 body {
-    background: #eee;
+    background: white;
 }
 
 .alert-info {
@@ -22,12 +22,6 @@ body {
 
 .tiles .card-body p, .tiles .card-body time {
     color: #797979;
-}
-
-@media (max-width: 1040px) {
-    .product .price {
-        background: gray;
-    }
 }
 
 /* заголовок и хлебные крошки */

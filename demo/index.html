@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="all" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
 
     <link href="main.css" rel="stylesheet">
 
@@ -32,101 +33,38 @@
         <li><a href="#"><span>Русский</span></a></li>
     </ul>
 </nav>
-<nav class="menu desktop">
-    <div class="container">
-        <ul class="nav bar">
-            <li><a class="check-delivery" href="#" data-toggle-modal=".delivery-address">Ульяновск</a></li>
-            <li><a href="#">Русский</a></li>
-        </ul>
-        <ul class="nav bar">
-            <li><a href="#">Магазин</a></li>
-            <li><a href="#">Доставка</a></li>
-        </ul>
-        <ul class="nav bar">
-            <li class="dropdown">
-                <a href="#">
-                    <img src="https://secure.gravatar.com/avatar/aa7384f659a1c0cfb7ae369c597531cc"
-                         alt="Фото пользователя"/>
-                    Иван Иванов
-                </a>
-                <div class="dropdown-menu">
-                    <ul class="nav">
-                        <li><a href="#">Панель управления</a></li>
-                        <li><a href="#">Заказы <b>(2)</b></a></li>
-                        <li><a href="#">Вознаграждения</a></li>
-                        <li><a href="#">Выйти</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="#">Войти</a></li>
-        </ul>
-
-
-    </div>
-</nav>
 <header>
     <div class="container">
         <a href="#" class="icon icon-burger mobile" data-toggle-modal="nav.side"><span></span></a>
-        <a href="#"><img src="img/logo.png" alt="Логотип" style="margin-top: -16px;"></a>
-        <form class="quick-search desktop">
-            <input type="text" name="search" placeholder="Поиск"/>
-            <button type="submit"></button>
-            <div class="search-wrap">
-                <ul id="search-result"></ul>
-            </div>
-        </form>
-
-        <ul class="nav bar desktop">
-            <li class="dropdown">
-                <a href="#">
-                    <img src="https://secure.gravatar.com/avatar/aa7384f659a1c0cfb7ae369c597531cc"
-                         alt="Фото пользователя"/>
-                </a>
-                <div class="dropdown-menu">
-                    <ul class="nav">
-                        <li><a href="#">Панель управления</a></li>
-                        <li><a href="#">Заказы <b>(2)</b></a></li>
-                        <li><a href="#">Вознаграждения</a></li>
-                        <li><a href="#">Выйти</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="#">Войти</a></li>
-        </ul>
-        <div class="minicart desktop">
-            <div class="subtotal">30 600 <sup>₽</sup></div>
-            <a href="#" class="btn btn-primary">Корзина</a>
-        </div>
-
-        <a href="#" class="icon icon-search mobile"></a>
-
+        <a href="#"><img src="img/logo.png" alt="Логотип" style="margin-top: -20px;"></a>
+        <nav class="menu">
+            <ul class="nav bar">
+                <li class="dropdown">
+                    <a href="#">Книги <b>(новинки)</b></a>
+                    <div class="dropdown-menu">
+                        <ul class="nav">
+                            <li><a href="#">Панель управления</a></li>
+                            <li><a href="#">Заказы <b>(2)</b></a></li>
+                            <li><a href="#">Вознаграждения</a></li>
+                            <li><a href="#">Выйти</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Журналы</a></li>
+                <li><a href="#">Тренинги</a></li>
+                <li><a href="#">Очень длинное название рубрики</a></li>
+            </ul>
+        </nav>
+        <nav class="menu">
+            <ul class="nav bar">
+                <li><a href="#"><i class="fa fa-search"></i></a></li>
+                <li><a href="#" data-toggle-modal=".delivery-address"><i class="fa fa-user"></i></a></li>
+                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
     </div>
 </header>
-
-<nav class="menu">
-    <div class="container">
-        <ul class="nav bar">
-            <li class="dropdown">
-                <a href="#">Книги <b>(новинки)</b></a>
-                <div class="dropdown-menu">
-                    <ul class="nav">
-                        <li><a href="#">Панель управления</a></li>
-                        <li><a href="#">Заказы <b>(2)</b></a></li>
-                        <li><a href="#">Вознаграждения</a></li>
-                        <li><a href="#">Выйти</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="#">Журналы</a></li>
-            <li><a href="#">Тренинги</a></li>
-            <li><a href="#">Очень длинное название рубрики</a></li>
-        </ul>
-        <ul class="nav bar">
-            <li><a href="#">Новости</a></li>
-            <li><a href="#">Контакты</a></li>
-        </ul>
-    </div>
-</nav>
 
 <nav class="breadcrumbs">
     <div class="container">
@@ -137,14 +75,6 @@
         </ul>
         <header>
             <h1>Добрая и хорошая книга</h1>
-            <div class="controls">
-                <select>
-                    <option selected="selected" disabled="disabled">Сортировать по</option>
-                    <option>Default</option>
-                    <option>Price</option>
-                    <option>Rating</option>
-                </select>
-            </div>
         </header>
     </div>
 </nav>
@@ -152,58 +82,32 @@
 <div class="container with-sidebar section">
 
     <aside>
-        <nav class="collapsed card">
-            <header class="toggle-active active">
-                <h3>Категории</h3>
-            </header>
-            <ul class="nav">
-                <li><a href="#">Книги</a></li>
-                <li class="active"><a href="#">Журналы</a></li>
-                <li><a href="#">Тренинги</a></li>
-                <li><a href="#">Очень длинное название рубрики</a></li>
-            </ul>
-        </nav>
-
-
-        <nav class="collapsed card">
-            <header class="toggle-active active">
-                <h3>Мой заказ <span>48 000 руб</span></h3>
-            </header>
-            <div class="card-body">
-                Некий текст
-            </div>
-            <footer>
-                <button type="button" class="btn btn-primary">Оформить заказ</button>
-            </footer>
-        </nav>
-
+        <h2>Фрукты</h2>
+        <p>
+            В некоторых языках понятие «фрукт» не выделяется из понятия «плод», обозначающее орган покрытосеменных растений, содержащий семена, образовавшийся из завязи цветка, независимо от съедобности и сочности
+        </p>
+        <ul class="nav">
+            <li><a href="#">Журналы</a></li>
+            <li><a href="#">Тренинги</a></li>
+            <li><a href="#">Очень длинное название рубрики</a></li>
+        </ul>
     </aside>
 
     <main>
-        <header class="desktop">
-            <h2>Фрукты</h2>
-            <div class="controls">
-                <select>
-                    <option selected="selected" disabled="disabled">Сортировать по</option>
-                    <option>Default</option>
-                    <option>Price</option>
-                    <option>Rating</option>
-                </select>
-            </div>
-        </header>
-        <div class="products">
+        <div class="tiles">
             <div class="product card">
-                <div class="images as-tile">
-                    <img src="img/product.jpg" alt="Фрукты"/>
+                <div class="top">
+                    <div class="badges">
+                        <div class="badge badge-new">New</div>
+                        <div class="badge badge-soon">Soon</div>
+                    </div>
                 </div>
-                <div class="details">
-                    <h3>Персик</h3>
-                    <p>Растение из подрода Миндаль рода Слива семейства Розовые. Является культигеном, возникшим в
-                        результате множественной интрогрессивной гибридизации между: персиком гансуанским, персиком
-                        удивительным, персиком Давида, миндалём обыкновенным, сливой китайской, абрикосом обыкновенным,
-                        алычой.</p>
-                    <div class="price">15 000 ₽</div>
-
+                <img class="image" src="img/product.jpg" alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3>Виноград</h3>
+                        <div class="price">1 ₽</div>
+                    </a>
                     <div class="purchase">
                         <div class="control-quantity">
                             <button class="simple btn btn-primary btn-icon btn-icon-cart active">
@@ -221,13 +125,26 @@
                 </div>
             </div>
             <div class="product card">
-                <div class="images as-tile">
-                    <img src="img/product.jpg" alt="Фрукты"/>
+                <div class="top">
+                    <div class="badges">
+                        <div class="badge badge-soon">
+                            Soon
+                        </div>
+                        <div class="badge badge-offer">
+                            Offer
+                        </div>
+                    </div>
                 </div>
-                <div class="details">
-                    <h3>Виноград</h3>
-                    <div class="price">15 000 ₽</div>
-
+                <img class="image" src="img/product.jpg" alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3>Персик</h3>
+                        <p>Растение из подрода Миндаль рода Слива семейства Розовые. Является культигеном, возникшим в
+                            результате множественной интрогрессивной гибридизации между: персиком гансуанским, персиком
+                            удивительным, персиком Давида, миндалём обыкновенным, сливой китайской, абрикосом
+                            обыкновенным, алычой.</p>
+                        <div class="price">12 ₽</div>
+                    </a>
                     <div class="purchase">
                         <div class="control-quantity">
                             <button class="simple btn btn-primary btn-icon btn-icon-cart active">
@@ -238,6 +155,243 @@
                                 <span class="amount">5</span><i class="icon icon-cart"></i>
                                 <button class="plus"></button>
                             </div>
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="top">
+                    <div class="badges">
+                        <div class="badge badge-sale">Sale</div>
+                        <div class="badge badge-offer">Offer</div>
+                    </div>
+                </div>
+                <img class="image" src="img/product.jpg" alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3 class="product-title">Яблоко</h3>
+                        <div class="price">14808.51 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="top">
+                    <div class="badges"></div>
+                </div>
+                <img class="image"
+                     src="img/product.jpg"
+                     alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3 class="product-title">Лайм</h3>
+
+                        <div class="price">3063.83 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="top">
+                    <div class="badges"></div>
+                </div>
+                <img class="image"
+                     src="img/product.jpg"
+                     alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3 class="product-title">Лимон</h3>
+
+                        <div class="price">12765.96 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="top">
+                    <div class="badges"></div>
+                </div>
+                <img class="image"
+                     src="img/product.jpg"
+                     alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3 class="product-title">Вишня</h3>
+
+                        <div class="price">9702.13 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="top">
+                    <div class="badges"></div>
+                </div>
+                <img class="image"
+                     src="img/product.jpg"
+                     alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3 class="product-title">Набор: вишня и лимон</h3>
+
+                        <div class="price">4851.06 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="top">
+                    <div class="badges"></div>
+                </div>
+                <img class="image"
+                     src="img/product.jpg"
+                     alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3 class="product-title">Набор: виноград и персик</h3>
+
+                        <div class="price">12765.96 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="top">
+                    <div class="badges"></div>
+                </div>
+                <img class="image"
+                     src="img/product.jpg"
+                     alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3 class="product-title">Набор: лайм и яблоко</h3>
+
+                        <div class="price">12765.96 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+
+                        </div>
+                        <a class="btn btn-icon btn-icon-like"></a>
+                        <a class="btn btn-icon btn-icon-share"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product card">
+                <div class="top">
+                    <div class="badges"></div>
+                </div>
+                <img class="image" src="img/product.jpg" alt="">
+                <div class="card-body">
+                    <a href="#">
+                        <h3 class="product-title">Набор: яблоко и персик</h3>
+                        <div class="price">12 345 ₽</div>
+                    </a>
+                    <div class="purchase">
+                        <div class="control-quantity">
+                            <button class="simple btn btn-primary btn-icon btn-icon-cart active">
+                                <span>Купить</span>
+                            </button>
+                            <div class="complex btn btn-primary">
+                                <button class="minus"></button>
+                                <span class="amount">5</span><i class="icon icon-cart"></i>
+                                <button class="plus"></button>
+                            </div>
+
                         </div>
                         <a class="btn btn-icon btn-icon-like"></a>
                         <a class="btn btn-icon btn-icon-share"></a>
@@ -1091,6 +1245,32 @@
             </div>
         </form>
 
+        <nav class="collapsed card">
+            <header class="toggle-active active">
+                <h3>Категории</h3>
+            </header>
+            <ul class="nav">
+                <li><a href="#">Книги</a></li>
+                <li class="active"><a href="#">Журналы</a></li>
+                <li><a href="#">Тренинги</a></li>
+                <li><a href="#">Очень длинное название рубрики</a></li>
+            </ul>
+        </nav>
+
+
+        <nav class="collapsed card">
+            <header class="toggle-active active">
+                <h3>Мой заказ <span>48 000 руб</span></h3>
+            </header>
+            <div class="card-body">
+                Некий текст
+            </div>
+            <footer>
+                <button type="button" class="btn btn-primary">Оформить заказ</button>
+            </footer>
+        </nav>
+
+
     </div>
 
 </section>
@@ -1191,9 +1371,9 @@
         <div class="row">
             <nav class="social">
                 <ul class="nav bar">
-                    <li><a href="#" target="_blank">VK</a></li>
-                    <li><a href="#" target="_blank">FB</a></li>
-                    <li><a href="#" target="_blank">IN</a></li>
+                    <li><a href="#" target="_blank"><i class="fa fa-vk"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
                 </ul>
                 <footer>
                     <p class="legal">ИП Яшин Александр Владимирович</p>
