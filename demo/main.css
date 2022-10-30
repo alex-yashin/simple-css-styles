@@ -1,5 +1,6 @@
 @import "../src/typo.css";
 @import "../src/layout.css";
+@import "../src/grid.css";
 @import "../src/nav/bar.css";
 @import "../src/card/card.css";
 @import "../src/select/select.css";
@@ -14,3 +15,7 @@
 @import "../src/cart/cart.css";
 
 @import "colors.css";
+
+body {
+    font-family: "PT Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

@@ -1,0 +1,52 @@
+.gallery {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery .image {
+    flex-shrink: 0;
+}
+
+/* все картинки в галлере с закругленным углами */
+.gallery img {
+    display: block;
+    border-radius: 16px;
+    max-width: 100%;
+}
+
+.gallery .image, .product .gallery .image img {
+    width: 476px;
+}
+@media (max-width: 1492px) {
+    .gallery .image, .product .gallery .image img {
+        width: 394px;
+    }
+}
+@media (max-width: 1246px) {
+    .gallery .image, .product .gallery .image img {
+        width: 312px;
+    }
+}
+@media (max-width: 1000px) {
+    .gallery .image, .product .gallery .image img {
+        width: 230px;
+    }
+}
+
+/* на самых малых разрешениях картинка идет от края до края */
+@media (max-width: 320px) {
+    .product .gallery {
+        margin-left: -16px;
+        margin-right: -16px;
+    }
+
+    .product .gallery img {
+        border-radius: 0;
+    }
+
+}

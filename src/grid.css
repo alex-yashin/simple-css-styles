@@ -1,0 +1,201 @@
+/*
+ контейнеры расчитываются исходя из того, что блоки в сетке тайлов могут быть шириной 320 пикселей и 400 пикселей,
+ а отступы 16 пикселей на маленьких разрешениях и 24 пикселя на больших
+ как только три тайла перестают помещаться в строчку, строчка фиксируются двумя тайлами и они начинают сжиматься до того,
+ пока не станет помещаться только один тайл.
+
+ Ограничение на медиа-запрос всегда на два отсупа больше, чем контейнер, чтобы от края экрана всегда был небольшой отступ
+ 400 (432)
+ 320 * 3 + 16 * 2 = 992 (1040)
+ 400 * 3 + 24 * 2 = 1248 (1296)
+ 400 * 4 + 24 * 3 = 1672 (1720)
+ 400 * 5 + 24 * 4 = 2096 (2144)
+ 400 * 6 + 24 * 5 = 2520 (2568)
+ 400 * 7 + 24 * 6 = 2944 (2992)
+ 400 * 8 + 24 * 7 = 3368 (3416)
+ 400 * 9 + 24 * 8 = 3792 (3840)
+
+ 1296 - переход на ширину тайла 320 пикселей и отступ 16 пикселей
+ 1040 - переход в мобильный режим на две тянущиеся колонки
+ 432 - переход в одноколоночный режим
+ */
+
+.container {
+    position: relative;
+    width: 3792px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+@media (max-width: 3840px) {
+    .container {
+        width: 3368px;
+    }
+}
+
+@media (max-width: 3416px) {
+    .container {
+        width: 2944px;
+    }
+}
+
+@media (max-width: 2992px) {
+    .container {
+        width: 2520px;
+    }
+}
+
+@media (max-width: 2568px) {
+    .container {
+        width: 2096px;
+    }
+}
+
+@media (max-width: 2144px) {
+    .container {
+        width: 1672px;
+    }
+}
+
+@media (max-width: 1720px) {
+    .container {
+        width: 1248px;
+    }
+}
+
+@media (max-width: 1296px) {
+    .container {
+        width: auto;
+        max-width: 992px;
+    }
+}
+
+@media (max-width: 1040px) {
+    .container {
+        margin: 0 16px;
+    }
+}
+
+@media (max-width: 1040px) {
+    .desktop {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1041px) {
+    .mobile {
+        display: none !important;
+    }
+}
+
+/* плиточка и колонки */
+.tiles, .container.with-sidebar, .row {
+    gap: 24px;
+}
+
+@media (max-width: 1040px) {
+    body > .container.with-sidebar {
+        display: block;
+    }
+    body > .container.with-sidebar > aside {
+        display: none;
+    }
+}
+
+
+.tiles > *, .container.with-sidebar aside, .as-tile {
+    min-width: 400px;
+    width: 400px;
+}
+
+@media (max-width: 1296px) {
+    .tiles, .container.with-sidebar, .row {
+        gap: 16px;
+    }
+    .tiles > *, .container.with-sidebar aside, .as-tile {
+        min-width: 320px;
+        width: 320px;
+    }
+}
+
+@media (max-width: 1296px) {
+    .tiles, .container.with-sidebar, .row {
+        gap: 16px;
+    }
+    .tiles > *, .container.with-sidebar aside, .as-tile {
+        min-width: 320px;
+        width: 320px;
+    }
+}
+
+
+/* на небольших экранах карточки в плитке лепим попарно */
+@media (max-width: 1040px) {
+    .tiles {
+        margin-left: -16px;
+        margin-right: -16px;
+        width: auto;
+        justify-content: space-between;
+        column-gap: 0;
+    }
+
+    .tiles > * {
+        width: 49%;
+        min-width: auto;
+    }
+
+    .tiles > .card {
+        border-radius: 0 16px 16px 0;
+    }
+
+    .tiles > .card.compact > *:first-child {
+        border-radius: 0 16px 0 0;
+    }
+
+    .tiles > .card:nth-child(2n) {
+        border-radius: 16px 0 0 16px;
+    }
+
+    .tiles > .card.compact:nth-child(2n) > *:first-child {
+        border-radius: 16px 0 0 0;
+    }
+}
+
+/* если ширина экрана небольшая, то все лепим в одну колонку */
+@media (max-width: 432px) { /* 400 + 16 * 2 */
+    .tiles {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .tiles > *, .as-tile {
+        width: 100% !important;
+        min-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .tiles > .card, .tiles > .card:nth-child(2n) {
+        border-radius: 16px;
+    }
+}
+
+/* отступы */
+.section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* все, что с фоном, должно быть с отступом между собой */
+.card + .card, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
+    margin-top: 24px;
+}
+
+@media (max-width: 1040px) {
+    .card + .card, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
+        margin-top: 16px;
+    }
+}
+
+.tiles .card + .card, .row .card + .card {
+    margin-top: 0;
+}
