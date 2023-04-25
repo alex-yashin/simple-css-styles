@@ -28,7 +28,22 @@
         <li class="points"><a href="#">Пункты выдачи</a></li>
     </ul>
     <ul class="nav">
-        <li><a href="#">Магазин</a></li>
+        <li class="accordion">
+            <a href="#">Магазин</a>
+            <ul class="nav collapse">
+                <li><a href="#">Журналы</a></li>
+                <li><a href="#">Тренинги</a></li>
+                <li><a href="#">Очень длинное название рубрики</a></li>
+            </ul>
+        </li>
+        <li class="accordion">
+            <a href="#">Личный кабинет</a>
+            <ul class="nav collapse">
+                <li><a href="#">Панель управления</a></li>
+                <li><a href="#">Заказы <b>(2)</b></a></li>
+                <li><a href="#">Выйти</a></li>
+            </ul>
+        </li>
         <li><a href="#">Контакты</a></li>
     </ul>
     <ul class="nav">
@@ -39,7 +54,7 @@
     <div class="container">
         <a href="#" class="icon icon-burger mobile" data-toggle-modal="nav.side"><span></span></a>
         <a href="#"><img src="img/logo.png" alt="Логотип" style="margin-top: -20px;"></a>
-        <nav class="menu">
+        <nav class="menu desktop">
             <ul class="nav bar">
                 <li class="dropdown">
                     <a href="#">Книги <b>(новинки)</b></a>
@@ -47,7 +62,11 @@
                         <ul class="nav">
                             <li><a href="#">Панель управления</a></li>
                             <li><a href="#">Заказы <b>(2)</b></a></li>
-                            <li><a href="#">Вознаграждения</a></li>
+                            <li><a href="#">Выйти</a></li>
+                        </ul>
+                        <ul class="nav">
+                            <li><a href="#">Панель управления</a></li>
+                            <li><a href="#">Заказы <b>(2)</b></a></li>
                             <li><a href="#">Выйти</a></li>
                         </ul>
                     </div>
@@ -57,7 +76,7 @@
                 <li><a href="#">Очень длинное название рубрики</a></li>
             </ul>
         </nav>
-        <nav class="menu">
+        <nav class="menu desktop">
             <ul class="nav bar">
                 <li><a href="#"><i class="fa fa-search"></i></a></li>
                 <li><a href="#" data-toggle-modal=".delivery-address"><i class="fa fa-user"></i></a></li>
@@ -65,6 +84,7 @@
                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
             </ul>
         </nav>
+        <a class="icon icon-search mobile" href="#" data-toggle-modal=".search"></a>
     </div>
 </header>
 
@@ -1101,10 +1121,14 @@
                     <option value="kz">Казахстан</option>
                 </select>
             </div>
-            <div class="form-group">
+            <div class="form-group error">
                 <label class="control-label">Email</label>
                 <input type="text" class="form-control" value="">
                 <p>Проверьте email</p>
+            </div>
+            <div class="form-group filled">
+                <label class="control-label">ФИО</label>
+                <div class="form-control form-static">Тестов Иван Петрович</div>
             </div>
             <div class="form-group">
                 <input type="radio" name="gender" value="male" id="gender_male">
@@ -1317,6 +1341,7 @@
 <script src="../src/cart/cart.js"></script>
 <script src="../src/overlay/overlay.js"></script>
 <script src="../src/form/form.js"></script>
+<script src="../src/accordion/accordion.js"></script>
 
 <script src="demo.js"></script>
 </body>

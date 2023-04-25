@@ -2,6 +2,7 @@
 @import "../src/layout.css";
 @import "../src/grid.css";
 @import "../src/nav/bar.css";
+@import "../src/accordion/accordion.css";
 @import "../src/card/card.css";
 @import "../src/select/select.css";
 @import "../src/tabs/tabs.css";

@@ -43,7 +43,7 @@ nav.side > header > a > * {
     vertical-align: middle;
 }
 
-nav.side > ul.nav > li > a {
+nav.side > ul.nav > li > a, nav.side > ul.nav > li > ul {
     padding: 16px 0 16px 32px;
 }
 

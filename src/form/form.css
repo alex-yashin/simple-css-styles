@@ -73,3 +73,16 @@
 .form-group select.form-control + .select-button {
     margin-left: -16px;
 }
+
+.form-group.error label.control-label, .form-group.error input, .form-group.error .form-control + p {
+    color: red;
+}
+
+.form-group .form-control.form-static {
+    height: auto;
+    border-bottom: none;
+}
+
+.form-group .form-control.form-static p:last-child {
+    margin-bottom: 0;
+}

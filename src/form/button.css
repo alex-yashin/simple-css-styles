@@ -59,6 +59,10 @@ button, .btn {
     transition: .3s ease;
 }
 
+.btn:disabled {
+    opacity: 0.3;
+}
+
 .btn-link, .btn-link:hover {
     border: none;
 }
