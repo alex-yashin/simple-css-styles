@@ -2,169 +2,21 @@
 @import "gallery.css";
 @import "zoom.css";
 
-.tiles .card h3, .tiles .card p {
+.price {
+    font-size: 1.5rem;
+}
+
+.products.tiles .card h3, .tiles .card p {
     font-size: 1rem;
     font-weight: normal;
     margin: 0;
     padding: 0;
 }
 
-/* на десктопе товар ведет себя как карточка */
-@media (min-width: 1041px) {
-
-    .product.single .zoom {
-        background: white;
-        border-radius: 16px;
-        overflow: hidden;
-    }
-
-    .product.single .zoom {
-        display: block;
-        padding: 24px;
-    }
-
-    .product {
-        display: flex;
-        gap: 24px;
-    }
-
-    .product .images, .product .images > a.zoom,  .images > a.zoom > img {
-        box-sizing: border-box;
-    }
-
-    .product .images {
-        flex-shrink: 0;
-    }
-
-    .product .details {
-        flex-shrink: 1;
-    }
-
-    .product .images > a > img, .product .images > img {
-        width: 100%;
-    }
-
-    .product h3, .product .price {
-        font-size: 1.5rem;
-    }
-
-}
-
-@media (max-width: 1040px) {
-    /* а на мобилке вместо карточки-товара приклепленной слева карточкой становится изображение товара */
-    .product .images {
-        width: 100%;
-        background: white;
-        border-radius: 16px;
-        overflow: hidden;
-    }
-
-    .product .images img {
-        max-width: 100%;
-    }
-
-    .product .images + .details {
-        margin-top: 16px;
-    }
-
-    /* а иконки на мобильных не показываем, вместо них листалка картинок */
-    .product .thumbs {
-        display: none;
-    }
-
-    /* выравниваем цену напротив заголовка */
-    .product .details {
-        position: relative;
-    }
-
-    .product h3, .product .price {
-        font-size: 1rem;
-    }
-
-    .product h3 {
-        padding: 0.5rem 0;
-    }
-
-    nav.tabs {
-        font-size: 1rem;
-        font-weight: bold;
-    }
-
-    /* на мобилках табы скролятся тачем, но скрол не видно */
-    nav.tabs ul.nav.bar {
-        overflow-x: hidden;
-        overflow-y: visible;
-        display: block;
-    }
-
-    nav.tabs ul.nav.bar::-webkit-scrollbar {
-        height: 0;
-    }
-
-}
-
-
-.product + * {
-    clear: both;
-}
-
-/* иконка увеличения картинки */
-.product .zoom {
-    display: block;
-    position: relative;
-    text-align: center;
-}
-
-.product .images {
-    text-align: center;
-}
-
-.product .zoom::after {
+.products.tiles > .compact.card .badges {
     position: absolute;
+    top: 16px;
     right: 16px;
-    bottom: 16px;
-    background-image: url(size.svg);
-    background-repeat: no-repeat;
-    content: '';
-    width: 30px;
-    height: 30px
-}
-
-.product .thumbs {
-    margin-top: 16px;
-}
-
-.product .thumbs img {
-    width: 5rem;
-    background: white;
-    border-radius: 16px;
-}
-
-.product .product-category {
-    color: #979797;
-}
-
-.product p {
-    color: #797979;
-}
-
-.product + nav.tabs {
-    margin-top: 2rem;
-}
-
-.btn.btn-round {
-    width: 1em;
-    height: 1em;
-    border: 1px solid #dddde0;
-    border-radius: 100%;
-    cursor: pointer;
-    padding: 0.5rem;
-}
-
-.btn.btn-round:before {
-    display: block;
-    width: 100%;
-    height: 100%;
 }
 
 .btn.btn-icon-share:before {
@@ -175,11 +27,4 @@
 .btn.btn-icon-like:before {
     content: ' ';
     background: #fff url(like.svg) center center no-repeat;
-}
-
-
-.tiles > .compact.card .badges {
-    position: absolute;
-    top: 16px;
-    right: 16px;
 }

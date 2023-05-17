@@ -23,7 +23,10 @@
 }
 
 .control-quantity > .active {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
 }
 
 .control-quantity .minus, .control-quantity .plus {
@@ -77,10 +80,9 @@
         padding: 0.5rem;
     }
 
-    .tiles .purchase .simple.btn:before {
+    .tiles .purchase .simple.btn:before, .tiles .purchase .complex .icon {
         width: 24px;
         height: 24px;
-        display: block;
     }
 
     .tiles .purchase .simple.btn > span {

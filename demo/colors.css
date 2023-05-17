@@ -57,20 +57,24 @@ nav.breadcrumbs {
 }
 
 .btn-primary {
-    background: red;
-    border: 1px solid red;
+    background: #ffdb5d;
+    border: 1px solid #fffcf0;
     color: #333;
 }
 
 .btn-primary:hover {
-    background: yellow;
-    border: 1px solid yellow;
+    background: #ffdb5d;
+    border: 1px solid #ffdb5d;
     color: #333;
+}
+
+select {
+    border: 1px solid #ffdb5d;
 }
 
 /* навигация */
 ul.nav > li.active > a, ul.nav > li > a:hover {
-    color: orange;
+    color: #ffdb5d;
 }
 
 ul.nav > li > a > b {
@@ -79,7 +83,7 @@ ul.nav > li > a > b {
 
 /* цвет подчеркивания активных табов */
 nav.tabs ul li.active a:after {
-    background: orange;
+    background: #ffdb5d;
 }
 
 /* формы */

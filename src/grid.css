@@ -27,6 +27,10 @@
     box-sizing: border-box;
 }
 
+.limited.container {
+    width: 992px;
+}
+
 @media (max-width: 3840px) {
     .container {
         width: 3368px;

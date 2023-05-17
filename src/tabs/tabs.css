@@ -42,3 +42,14 @@ nav.tabs ul.nav.bar > li:last-child > a {
 .tab img, .tab figure {
     max-width: 100%;
 }
+
+/* на мобилках табы скролятся тачем, но скрол не видно */
+nav.tabs ul.nav.bar {
+    overflow-x: hidden;
+    overflow-y: visible;
+    display: block;
+}
+
+nav.tabs ul.nav.bar::-webkit-scrollbar {
+    height: 0;
+}

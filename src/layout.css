@@ -28,7 +28,7 @@ body > section > .container > header, body > nav > .container > header, body > .
     flex-wrap: wrap;
 }
 
-.centered {
+.centered.container {
     display: flex;
     gap: 16px;
     flex-direction: column;

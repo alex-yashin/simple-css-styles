@@ -1,11 +1,11 @@
 /* хлебные крошки + главный заголовок страницы */
 nav.breadcrumbs {
-    padding: 2rem 0;
+    padding: 1rem 0;
     overflow: hidden;
 }
 
 nav.breadcrumbs ul.nav.bar + header {
-    margin-top: 16px;
+    margin-top: 1rem;
 }
 
 /* у последнего элемента не должно быть отступа снизу, чтобы отступ хлебных крошек смотрелся симметрично */
