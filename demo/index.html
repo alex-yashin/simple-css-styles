@@ -1097,92 +1097,128 @@
 
 <section class="limited container section">
 
-        <div class="alert alert-danger">Опасное действие может быть опасным.</div>
-        <form class="form card">
+    <div class="alert alert-danger">Опасное действие может быть опасным.</div>
+    <form class="form card">
 
 
-            <div class="alert alert-warning">Если переходить дорогу на красный свет светофора, то может случиться
-                всякое.
-            </div>
-            <div class="alert alert-info">
-                Оформите личный кабинет, если у вас еще нет личного кабинета, и получите промокод.
-            </div>
+        <div class="alert alert-warning">Если переходить дорогу на красный свет светофора, то может случиться
+            всякое.
+        </div>
+        <div class="alert alert-info">
+            Оформите личный кабинет, если у вас еще нет личного кабинета, и получите промокод.
+        </div>
 
-            <div class="form-group">
-                <label class="control-label">Страна *</label>
-                <select class="form-control" name="country_key">
-                    <option value="" selected="selected"></option>
-                    <option value="ru">Россия</option>
-                    <option value="by">Белоруссия</option>
-                    <option value="kz">Казахстан</option>
-                </select>
+        <div class="form-group">
+            <label class="control-label">Страна *</label>
+            <select class="form-control" name="country_key">
+                <option value="" selected="selected"></option>
+                <option value="ru">Россия</option>
+                <option value="by">Белоруссия</option>
+                <option value="kz">Казахстан</option>
+            </select>
+        </div>
+        <div class="form-group error">
+            <label class="control-label">Email</label>
+            <input type="text" class="form-control" value="">
+            <p>Проверьте email</p>
+        </div>
+        <div class="form-group filled">
+            <label class="control-label">ФИО</label>
+            <div class="form-control form-static">Тестов Иван Петрович</div>
+        </div>
+        <div class="form-group">
+            <input type="radio" name="gender" value="male" id="gender_male">
+            <label for="gender_male">Мужчина</label>
+        </div>
+        <div class="form-group">
+            <input type="radio" name="gender" value="female" id="gender_female">
+            <label for="gender_female">Женщина</label>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Телефон</label>
+            <div class="input-group">
+                <input type="text" class="form-control" spellcheck="false">
+                <button type="button" class="link form-control-after">Проверить</button>
             </div>
-            <div class="form-group error">
-                <label class="control-label">Email</label>
-                <input type="text" class="form-control" value="">
-                <p>Проверьте email</p>
-            </div>
-            <div class="form-group filled">
-                <label class="control-label">ФИО</label>
-                <div class="form-control form-static">Тестов Иван Петрович</div>
-            </div>
-            <div class="form-group">
-                <input type="radio" name="gender" value="male" id="gender_male">
-                <label for="gender_male">Мужчина</label>
-            </div>
-            <div class="form-group">
-                <input type="radio" name="gender" value="female" id="gender_female">
-                <label for="gender_female">Женщина</label>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Телефон</label>
-                <div class="input-group">
-                    <input type="text" class="form-control" spellcheck="false">
-                    <button type="button" class="link form-control-after">Проверить</button>
+            <p>Укажите телефон в формате +7 (999) 999-99-99</p>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" name="agree_order" value="Y" id="agree_order">
+            <label for="agree_order">Я проинформирован об условиях</label>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" name="confirm_order" value="Y" id="confirm_order">
+            <label for="confirm_order">Согласен, со всем согласен</label>
+        </div>
+        <div class="buttons">
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+            <button type="button" class="btn btn-info">Распечатать</button>
+            <button type="button" class="btn">Отправить</button>
+            <button class="link">Отменить</button>
+        </div>
+    </form>
+
+    <nav class="collapsed card">
+        <header class="toggle-active active">
+            <h3>Категории</h3>
+        </header>
+        <ul class="nav">
+            <li><a href="#">Книги</a></li>
+            <li class="active"><a href="#">Журналы</a></li>
+            <li><a href="#">Тренинги</a></li>
+            <li><a href="#">Очень длинное название рубрики</a></li>
+        </ul>
+    </nav>
+
+
+    <nav class="collapsed card">
+        <header class="toggle-active active">
+            <h3>Мой заказ <span>48 000 руб</span></h3>
+        </header>
+        <div class="card-body">
+            Некий текст
+        </div>
+        <footer>
+            <button type="button" class="btn btn-primary">Оформить заказ</button>
+        </footer>
+    </nav>
+
+</section>
+
+<section class="limited container card section">
+    <ul class="nav feed">
+        <li>
+            <a href="http://island2.local/admin/en/articles/358">
+                <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=100" class="image" alt="">
+                <header>1001 метод выращивания гортензий</header>
+                <div class="short"><i>Иванов Иван • 12 мая</i> — Название «гортензия» растению дал Филибер Коммерсон, оно является производным от латинского hortus (сад). Поскольку Гортензия было в эту эпоху распространенным женским именем, возникло множество версий насчет женщины, которой могло быть посвящено это название: от Николь-Рейн Лепот, которую в семье могли звать Гортензией, до принцессы Гортензии — сестры принца Карла Генриха Нассау-Зигена, который вместе с Коммерсоном принимал участие в экспедиции Бугенвиля.</div>
+            </a>
+        </li>
+        <li class="disabled">
+            <a href="http://island2.local/admin/en/articles/358">
+                <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=100" class="image" alt="">
+                <header>Запуск сайта</header>
+                <div class="short"><i>Добряков Пётр • 11 мая</i> — Сайт готов.</div>
+            </a>
+        </li>
+        <li>
+            <a href="http://island2.local/admin/en/articles/358">
+                <div class="image">
+                    <img src="img/logo.png" alt="">
                 </div>
-                <p>Укажите телефон в формате +7 (999) 999-99-99</p>
-            </div>
-            <div class="form-group">
-                <input type="checkbox" name="agree_order" value="Y" id="agree_order">
-                <label for="agree_order">Я проинформирован об условиях</label>
-            </div>
-            <div class="form-group">
-                <input type="checkbox" name="confirm_order" value="Y" id="confirm_order">
-                <label for="confirm_order">Согласен, со всем согласен</label>
-            </div>
-            <div class="buttons">
-                <button type="submit" class="btn btn-primary">Сохранить</button>
-                <button type="button" class="btn btn-info">Распечатать</button>
-                <button type="button" class="btn">Отправить</button>
-                <button class="link">Отменить</button>
-            </div>
-        </form>
-
-        <nav class="collapsed card">
-            <header class="toggle-active active">
-                <h3>Категории</h3>
-            </header>
-            <ul class="nav">
-                <li><a href="#">Книги</a></li>
-                <li class="active"><a href="#">Журналы</a></li>
-                <li><a href="#">Тренинги</a></li>
-                <li><a href="#">Очень длинное название рубрики</a></li>
-            </ul>
-        </nav>
-
-
-        <nav class="collapsed card">
-            <header class="toggle-active active">
-                <h3>Мой заказ <span>48 000 руб</span></h3>
-            </header>
-            <div class="card-body">
-                Некий текст
-            </div>
-            <footer>
-                <button type="button" class="btn btn-primary">Оформить заказ</button>
-            </footer>
-        </nav>
-
+                <header>Атомная единица массы</header>
+                <div class="short">
+                    <i>Петров Василий • 10 мая</i>
+                    — А́томная едини́ца ма́ссы (русское обозначение: а. е. м.[1];
+                    международное: u), она же дальто́н (русское обозначение: Да, международное: Da), она же углеродная
+                    единица[2] — внесистемная единица массы, применяемая для масс молекул, атомов, атомных ядер и
+                    элементарных
+                    частиц. Атомная единица массы определяется как 1⁄238 массы свободного покоящегося атома урана 238U,
+                    находящегося в основном состоянии[3].
+                </div>
+            </a>
+        </li>
+    </ul>
 </section>
 
 <aside class="delivery-address popup popup-dialog popup-wide">

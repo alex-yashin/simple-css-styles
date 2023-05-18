@@ -1,0 +1,38 @@
+/* список статей для CMS */
+.nav.feed li {
+    padding: 0.5rem 0;
+    border-top: 1px solid #eee;
+}
+
+.nav.feed li:first-child {
+    border-top: none;
+}
+
+.nav.feed .disabled {
+    opacity: 0.5;
+}
+
+.nav.feed li header {
+    font-weight: bold;
+}
+
+.nav.feed li .short {
+    display: block;
+    max-height: 3rem;
+    overflow: hidden;
+}
+.nav.feed li .short i {
+    font-style: normal;
+    opacity: 0.75;
+}
+.nav.feed li .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 3rem;
+    margin-right: 0.5rem;
+    overflow: hidden;
+}
