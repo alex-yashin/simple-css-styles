@@ -56,7 +56,7 @@ ul.nav.bar > li > a > img {
     display: none;
     position: absolute;
     background: white;
-    padding: 2rem;
+    padding: 1.5rem;
     box-shadow: 0 4px 40px rgba(217,218,224,.5);
     -webkit-box-shadow: 0 4px 40px rgba(217,218,224,.5);
     -moz-box-shadow: 0 4px 40px rgba(217,218,224,.5);
