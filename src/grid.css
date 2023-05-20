@@ -68,7 +68,7 @@
 }
 
 @media (max-width: 1296px) {
-    .container {
+    .container, .limited.container {
         width: auto;
         max-width: 992px;
     }
