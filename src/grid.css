@@ -190,16 +190,20 @@
 }
 
 /* все, что с фоном, должно быть с отступом между собой */
-.card + .card, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
+.card + .card, * + .alert, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
     margin-top: 24px;
 }
 
 @media (max-width: 1040px) {
-    .card + .card, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
+    .card + .card, * + .alert, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
         margin-top: 16px;
     }
 }
 
-.tiles .card + .card, .row .card + .card {
+legend + .form-group {
+    margin-top: 0;
+}
+
+.tiles .card + .card, .row .card + .card, .row > .alert + .alert, .row > .card + .alert, .row > .alert + .card, .row > * + .buttons, .row > * + .form-group {
     margin-top: 0;
 }
