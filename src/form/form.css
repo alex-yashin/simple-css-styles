@@ -13,7 +13,6 @@
     color: #333;
     font-size: 1rem;
     font-weight: normal;
-    line-height: 1rem;
     border-left: 0;
     border-right: 0;
     border-top: 0;
@@ -23,14 +22,12 @@
 
 .form-group .form-control, .form-group .form-control-after {
     padding: 2rem 0 0.5rem 0;
-    height: 1rem;
     box-sizing: content-box;
 }
 
 /* отступ равен padding`у метки сверху, а высота строки равна высоте строки метки */
 .form-group .form-control + .select-button {
     top: 2rem;
-    line-height: 1rem;
 }
 
 .form-group .input-group {
