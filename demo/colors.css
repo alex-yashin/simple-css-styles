@@ -131,3 +131,8 @@ body > footer {
     background: linear-gradient(-265.99deg, #e7e7e7 -2.55%, #f4f4f4 100%);
     color: #979797;
 }
+
+.boxes > aside {
+    background: -o-linear-gradient(355.99deg, #e7e7e7 -2.55%, #f4f4f4 100%);
+    background: linear-gradient(-265.99deg, #e7e7e7 -2.55%, #f4f4f4 100%);
+}

@@ -92,6 +92,18 @@
     }
 }
 
+.boxes {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.boxes > * {
+    padding: 16px;
+}
+
 /* плиточка и колонки */
 .tiles, .container.with-sidebar, .row {
     gap: 24px;
@@ -107,31 +119,21 @@
 }
 
 
-.tiles > *, .container.with-sidebar aside, .as-tile {
+.tiles > *, .container.with-sidebar aside, .as-tile, .boxes > aside {
     min-width: 400px;
     width: 400px;
+    box-sizing: border-box;
 }
 
 @media (max-width: 1296px) {
     .tiles, .container.with-sidebar, .row {
         gap: 16px;
     }
-    .tiles > *, .container.with-sidebar aside, .as-tile {
+    .tiles > *, .container.with-sidebar aside, .as-tile, .boxes > aside {
         min-width: 320px;
         width: 320px;
     }
 }
-
-@media (max-width: 1296px) {
-    .tiles, .container.with-sidebar, .row {
-        gap: 16px;
-    }
-    .tiles > *, .container.with-sidebar aside, .as-tile {
-        min-width: 320px;
-        width: 320px;
-    }
-}
-
 
 /* на небольших экранах карточки в плитке лепим попарно */
 @media (max-width: 1040px) {
@@ -162,6 +164,10 @@
 
     .tiles > .card.compact:nth-child(2n) > *:first-child {
         border-radius: 16px 0 0 0;
+    }
+
+    .boxes {
+        flex-wrap: wrap;
     }
 }
 
