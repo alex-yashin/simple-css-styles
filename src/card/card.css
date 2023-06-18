@@ -34,6 +34,7 @@
     padding: 0;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .card.compact > *:first-child {
@@ -54,6 +55,10 @@
 
 .card > header {
     margin: -24px -24px 0 -24px;
+}
+
+.compact.card > header {
+    margin: 0;
 }
 
 @media (max-width: 1296px) {
