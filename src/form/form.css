@@ -27,10 +27,33 @@
     box-sizing: content-box;
 }
 
+.form-group select.form-control  {
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 /* отступ равен padding`у метки сверху, а высота строки равна высоте строки метки */
 .form-group .form-control + .select-button {
     top: 2rem;
+    pointer-events: none;
+    position: absolute;
+    display: inline-block;
+    line-height: 1.5rem;
+    margin-left: -24px;
+    vertical-align: top;
 }
+
+.form-group .form-control + .select-button:after {
+    content: ' ';
+    width: 0.5em;
+    height: 0.5em;
+    display: inline-block;
+
+    background: url(../img/triangle.svg);
+}
+
 
 .form-group .input-group {
     display: flex;
