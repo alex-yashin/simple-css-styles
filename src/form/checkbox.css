@@ -1,39 +1,38 @@
-.form-group [type="radio"]:not(:checked),
-.form-group [type="radio"]:checked,
-.form-group [type="checkbox"]:not(:checked),
-.form-group [type="checkbox"]:checked
+[type="radio"]:not(:checked),
+[type="radio"]:checked,
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked
 {
     position: absolute;
     left: -9999px;
     opacity: 0;
 }
 
-.form-group [type="radio"] + label,
-.form-group [type="checkbox"] + label
+[type="radio"] + label,
+[type="checkbox"] + label
 {
+    background: white;
+
     pointer-events: auto;
     cursor: pointer;
-    position: inherit;
-    display: block;
-    top: initial;
-    left: initial;
+    position: relative;
+    display: inline-block;
     color: inherit;
 
+    height: 1.25em;
     line-height: 1.25em;
-
-    margin: 16px 0;
 }
 
-.form-group [type="radio"] + label,
-.form-group [type="checkbox"] + label,
-.form-group [type="radio"] + label + p,
-.form-group [type="checkbox"] + label + p {
+[type="radio"] + label,
+[type="checkbox"] + label,
+[type="radio"] + label + p,
+[type="checkbox"] + label + p {
     padding: 0 0 0 1.5em;
 }
 
 
-.form-group [type="radio"] + label:before,
-.form-group [type="checkbox"] + label:before
+[type="radio"] + label:before,
+[type="checkbox"] + label:before
 {
     content: '';
     position: absolute;
@@ -49,8 +48,8 @@
 }
 
 
-.form-group [type="radio"] + label:after,
-.form-group [type="checkbox"] + label:after
+[type="radio"] + label:after,
+[type="checkbox"] + label:after
 {
     content: '';
     position: absolute;
@@ -66,20 +65,20 @@
     transition: .2s ease-in-out all;
 }
 
-.form-group [type="radio"] + label:before,
-.form-group [type="radio"] + label:after
+[type="radio"] + label:before,
+[type="radio"] + label:after
 {
     border-radius: 50%;
 }
 
-.form-group [type=checkbox]:checked+label:before,
-.form-group [type=radio]:checked+label:before
+[type=checkbox]:checked+label:before,
+[type=radio]:checked+label:before
 {
     background: blue;
     -webkit-box-shadow: none;
     box-shadow: none
 }
 
-.form-group [type=checkbox]:checked+label:after {
+[type=checkbox]:checked+label:after {
     border-color: #fff
 }
