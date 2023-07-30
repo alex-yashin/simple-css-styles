@@ -69,20 +69,16 @@
 }
 
 @media (max-width: 1296px) {
-    .container, .limited.container {
-        width: auto;
-        max-width: 992px;
+    .container {
+        width: 992px;
     }
 }
 
 @media (max-width: 1040px) {
-    .container {
+    .container, .limited.container  {
+        width: auto;
         margin-left: 16px;
         margin-right: 16px;
-    }
-    .limited.container {
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 
