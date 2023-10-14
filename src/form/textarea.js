@@ -1,13 +1,20 @@
-let textareaElements = document.querySelectorAll('textarea.form-control');
 let textareaAutogrow = function (e) {
     let computed = window.getComputedStyle(e);
     let padding = parseInt(computed.paddingTop) + parseInt(computed.paddingBottom);
-    e.style.height = "5px";
-    e.style.height = (e.scrollHeight - padding) + "px";
+    let oldHeight = parseInt(e.style.height);
+    let newHeight = e.scrollHeight - padding;
+    if (newHeight > oldHeight || !oldHeight) {
+        e.style.height = newHeight + "px";
+    }
 };
-for (let i = 0; i < textareaElements.length; i++) {
-    textareaElements[i].addEventListener('input', function () {
-        textareaAutogrow(this)
-    });
-    textareaAutogrow(textareaElements[i]);
-}
+document.addEventListener("DOMContentLoaded", function() {
+
+    let textareaElements = document.querySelectorAll('textarea.form-control');
+    for (let i = 0; i < textareaElements.length; i++) {
+        textareaElements[i].addEventListener('input', function () {
+            textareaAutogrow(this)
+        });
+        textareaAutogrow(textareaElements[i]);
+    }
+
+});
