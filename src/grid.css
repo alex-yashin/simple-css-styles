@@ -28,7 +28,7 @@
     box-sizing: border-box;
 }
 
-.limited.container {
+.limited.container, body.limited-containers .container {
     width: 992px;
 }
 
@@ -75,7 +75,7 @@
 }
 
 @media (max-width: 1040px) {
-    .container, .limited.container  {
+    .container, .limited.container, body.limited-containers .container  {
         width: auto;
         margin-left: 16px;
         margin-right: 16px;
