@@ -21,14 +21,6 @@
     }
 }
 
-@media (max-width: 1040px) {
-    .alert {
-        margin-left: -16px;
-        margin-right: -16px;
-        border-radius: 0;
-    }
-}
-
 /* компактная карточка - карточка без полей */
 .card.compact {
     padding: 0;

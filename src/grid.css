@@ -6,7 +6,13 @@
 
  Ограничение на медиа-запрос всегда на два отсупа больше, чем контейнер, чтобы от края экрана всегда был небольшой отступ
  400 (432)
- 320 * 3 + 16 * 2 = 992 (1040)
+
+ 320 * 1 + 0 * 1 = 320
+ 400 * 1 + 0 * 1 = 400 (448)
+
+ 320 * 2 + 16 * 1 = 656 (688)
+ 400 * 2 + 24 * 1 = 824 (872)
+ 320 * 3 + 16 * 2 = 992 (1024)
  400 * 3 + 24 * 2 = 1248 (1296)
  400 * 4 + 24 * 3 = 1672 (1720)
  400 * 5 + 24 * 4 = 2096 (2144)
@@ -74,21 +80,33 @@
     }
 }
 
-@media (max-width: 1040px) {
-    .container, .limited.container, body.limited-containers .container  {
-        width: auto;
-        margin-left: 16px;
-        margin-right: 16px;
+@media (max-width: 1024px) {
+    .container, .limited.container {
+        width: 824px;
     }
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 872px) {
+    .container, .limited.container {
+        width: 656px;
+    }
+}
+
+@media (max-width: 332px) {
+    .container, .limited.container, body.limited-containers .container  {
+        width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 1024px) {
     .desktop {
         display: none !important;
     }
 }
 
-@media (min-width: 1041px) {
+@media (min-width: 1025px) {
     .mobile {
         display: none !important;
     }
@@ -111,7 +129,7 @@
     gap: 24px;
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1024px) {
     body > .container.with-sidebar {
         display: block;
     }
@@ -137,8 +155,57 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .tiles, .container.with-sidebar, .row {
+        gap: 24px;
+    }
+    .tiles > *, .container.with-sidebar aside, .as-tile, .boxes > aside {
+        min-width: 400px;
+        width: 400px;
+    }
+}
+
+@media (max-width: 872px) {
+    .tiles, .container.with-sidebar, .row {
+        gap: 16px;
+    }
+    .tiles > *, .container.with-sidebar aside, .as-tile, .boxes > aside {
+        min-width: 320px;
+        width: 320px;
+    }
+}
+
+@media (max-width: 688px) {
+    .tiles, .container.with-sidebar, .row {
+        gap: 32px;
+        justify-content: space-around;
+    }
+    .tiles > *, .container.with-sidebar aside, .as-tile {
+        min-width: 400px;
+        width: 400px;
+    }
+    .boxes {
+        flex-direction: column;
+    }
+    .boxes > aside  {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 448px) {
+    .tiles, .container.with-sidebar, .row {
+        gap: 16px;
+        justify-content: space-around;
+    }
+    .tiles > *, .container.with-sidebar aside, .as-tile {
+        min-width: 320px;
+        width: 320px;
+    }
+}
+
 /* на небольших экранах карточки в плитке лепим попарно */
-@media (max-width: 1040px) {
+@media (max-width: 320px) {
     .tiles {
         margin-left: -16px;
         margin-right: -16px;
@@ -174,7 +241,7 @@
 }
 
 /* если ширина экрана небольшая, то все лепим в одну колонку */
-@media (max-width: 432px) { /* 400 + 16 * 2 */
+@media (max-width: 320px) { /* 400 + 16 * 2 */
     .tiles {
         margin-left: 0;
         margin-right: 0;
