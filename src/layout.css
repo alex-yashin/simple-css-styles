@@ -1,21 +1,3 @@
-/* плиточка и колонки */
-.tiles, .container.with-sidebar, .row {
-    display: flex;
-}
-
-.tiles {
-    flex-wrap: wrap;
-}
-
-/* колонки равной ширины и не переносятся в отличие от плитки */
-.row > * {
-    flex: 1;
-}
-
-.tiles > *, .container.with-sidebar aside, .as-tile {
-    box-sizing: border-box;
-}
-
 .tiles > * > img, .tiles > * > a > img{
     width: 100%;
 }
