@@ -178,11 +178,4 @@ a.card {
         display: inline-block;
     }
 
-    .tiles > .card .card-body {
-        padding-top: 24px;
-    }
-
-    .tiles > .card .card-body p {
-        display: none;
-    }
 }
