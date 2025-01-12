@@ -103,19 +103,19 @@
 }
 
 @media (max-width: 1023px) {
-    .container, .limited.container {
+    .container, .limited.container, body.limited-containers .container {
         width: 824px;
     }
 }
 
 @media (max-width: 871px) {
-    .container, .limited.container {
+    .container, .limited.container, body.limited-containers .container {
         width: 656px;
     }
 }
 
 @media (max-width: 687px) {
-    .container, .limited.container {
+    .container, .limited.container, body.limited-containers .container {
         width: 400px;
     }
 }
