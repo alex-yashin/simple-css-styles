@@ -1,279 +1,32 @@
-/*
- контейнеры расчитываются исходя из того, что блоки в сетке тайлов могут быть шириной 320 пикселей и 400 пикселей,
- а отступы 16 пикселей на маленьких разрешениях и 24 пикселя на больших
- как только три тайла перестают помещаться в строчку, строчка фиксируются двумя тайлами и они начинают сжиматься до того,
- пока не станет помещаться только один тайл.
-
- Ограничение на медиа-запрос всегда на два отсупа больше, чем контейнер, чтобы от края экрана всегда был небольшой отступ
- 400 (432)
-
- 320 * 1 + 0 * 1 = 320
- 400 * 1 + 0 * 1 = 400 (448)
-
- 320 * 2 + 16 * 1 = 656 (688)
- 400 * 2 + 24 * 1 = 824 (872)
- 320 * 3 + 16 * 2 = 992 (1024)
- 400 * 3 + 24 * 2 = 1248 (1296)
- 400 * 4 + 24 * 3 = 1672 (1720)
- 400 * 5 + 24 * 4 = 2096 (2144)
- 400 * 6 + 24 * 5 = 2520 (2568)
- 400 * 7 + 24 * 6 = 2944 (2992)
- 400 * 8 + 24 * 7 = 3368 (3416)
- 400 * 9 + 24 * 8 = 3792 (3840)
-
- 1296 - переход на ширину тайла 320 пикселей и отступ 16 пикселей
- 1040 - переход в мобильный режим на две тянущиеся колонки
- 432 - переход в одноколоночный режим
- */
-
-.container {
-    position: relative;
-    width: 3792px;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
+.container{width:3792px;}
+html{font-size:24px;}
+.tiles > *, .tile{min-width:400px;width:400px;}
+@media (max-width: 3839px){.container{width:3368px;}}
+@media (max-width: 3415px){.container{width:2944px;}}
+@media (max-width: 2991px){.container{width:2520px;}}
+@media (max-width: 2567px){.container{width:2096px;}}
+@media (max-width: 2143px){.container{width:1672px;}}
+@media (max-width: 1719px){.container{width:1248px;}}
+@media (max-width: 1295px){.container,.limited.container,body.limited-containers .container{width:992px;}html{font-size:16px;}.tiles > *, .tile{min-width:320px;width:320px;}
 }
-
-.limited.container, body.limited-containers .container {
-    width: 992px;
+@media (max-width: 1023px){.container,.limited.container,body.limited-containers .container{width:824px;}html{font-size:24px;}.tiles > *, .tile{min-width:400px;width:400px;}
 }
-
-/* плиточка и колонки */
-.tiles, .with-sidebar, .row {
-    display: flex;
+@media (max-width: 871px){.container,.limited.container,body.limited-containers .container{width:656px;}html{font-size:16px;}.tiles > *, .tile{min-width:320px;width:320px;}
 }
-
-.tiles {
-    flex-wrap: wrap;
+@media (max-width: 687px){.container,.limited.container,body.limited-containers .container{width:400px;}html{font-size:24px;}.tiles > *, .tile{min-width:400px;width:400px;}
 }
-
-/* колонки равной ширины и не переносятся в отличие от плитки */
-.row > * {
-    flex: 1;
+@media (max-width: 447px){.container,.limited.container,body.limited-containers .container{width:320px;}html{font-size:16px;}.tiles > *, .tile{min-width:320px;width:320px;}
 }
-
-.with-sidebar > main {
-    width: 100%;
-}
-
-.tiles > *, .with-sidebar aside, .as-tile {
-    box-sizing: border-box;
-}
-
-@media (max-width: 3839px) {
-    .container {
-        width: 3368px;
-    }
-}
-
-@media (max-width: 3415px) {
-    .container {
-        width: 2944px;
-    }
-}
-
-@media (max-width: 2991px) {
-    .container {
-        width: 2520px;
-    }
-}
-
-@media (max-width: 2567px) {
-    .container {
-        width: 2096px;
-    }
-}
-
-@media (max-width: 2143px) {
-    .container {
-        width: 1672px;
-    }
-}
-
-@media (max-width: 1719px) {
-    .container {
-        width: 1248px;
-    }
-}
-
-@media (max-width: 1295px) {
-    .container {
-        width: 992px;
-    }
-}
-
 @media (max-width: 1023px) {
-    .container, .limited.container, body.limited-containers .container {
-        width: 824px;
-    }
-}
-
-@media (max-width: 871px) {
-    .container, .limited.container, body.limited-containers .container {
-        width: 656px;
-    }
-}
-
-@media (max-width: 687px) {
-    .container, .limited.container, body.limited-containers .container {
-        width: 400px;
-    }
-}
-
-@media (max-width: 447px) {
-    .container, .limited.container, body.limited-containers .container {
-        width: 320px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-@media (max-width: 1023px) {
-    .desktop {
-        display: none !important;
-    }
-    .mobile-fluid.container {
-        width: 100%;
-    }
+    .desktop {display: none !important;}
+    .mobile-fluid.container {width: 100%;}
+    .with-sidebar {flex-direction: column;}
 }
 
 @media (min-width: 1024px) {
-    .mobile {
-        display: none !important;
-    }
-}
-
-.boxes {
-    display: flex;
-    flex-direction: row;
-    gap: 0;
-    justify-content: flex-start;
-    align-items: stretch;
-}
-
-.boxes > *, .box {
-    padding: 1rem;
-}
-
-.boxes > .boxes {
-    padding: 0;
-}
-
-.box + .boxes {
-    border-top: 1px solid #ccc;
-}
-
-.boxes > * + * {
-    border-left: 1px solid #ccc;
-}
-
-/* плиточка и колонки */
-.tiles, .with-sidebar, .row {
-    gap: 24px;
-}
-
-@media (max-width: 1023px) {
-    .with-sidebar {
-        display: block;
-    }
-    .with-sidebar > aside {
-        display: none;
-    }
-    .with-sidebar > aside + main {
-        width: 100%;
-    }
-}
-
-.tiles > *, .with-sidebar aside, .as-tile, .boxes > aside {
-    min-width: 400px;
-    width: 400px;
-    box-sizing: border-box;
-}
-
-@media (max-width: 1295px) {
-    .tiles, .with-sidebar, .row {
-        gap: 16px;
-    }
-    .tiles > *, .with-sidebar aside, .as-tile, .boxes > aside {
-        min-width: 320px;
-        width: 320px;
-    }
-}
-
-@media (max-width: 1023px) {
-    .tiles, .with-sidebar, .row {
-        gap: 24px;
-    }
-    .tiles > *, .with-sidebar aside, .as-tile, .boxes > aside {
-        min-width: 400px;
-        width: 400px;
-    }
-}
-
-@media (max-width: 871px) {
-    .tiles, .with-sidebar, .row {
-        gap: 16px;
-    }
-    .tiles > *, .with-sidebar aside, .as-tile, .boxes > aside {
-        min-width: 320px;
-        width: 320px;
-    }
+    .mobile {display: none !important;}
 }
 
 @media (max-width: 687px) {
-    .tiles, .with-sidebar, .row {
-        gap: 32px;
-        justify-content: space-around;
-    }
-    .tiles > *, .with-sidebar aside, .as-tile {
-        min-width: 400px;
-        width: 400px;
-    }
-    .boxes {
-        flex-direction: column;
-    }
-    .boxes > aside  {
-        width: 100%;
-        min-width: 100%;
-    }
-}
-
-@media (max-width: 447px) {
-    .tiles, .with-sidebar, .row {
-        gap: 16px;
-        justify-content: space-around;
-    }
-    .tiles > *, .with-sidebar aside, .as-tile {
-        min-width: 320px;
-        width: 320px;
-    }
-}
-
-/* отступы */
-.section {
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-/* все, что с фоном, должно быть с отступом между собой */
-.card + .card, * + .alert, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
-    margin-top: 24px;
-}
-
-@media (max-width: 1040px) {
-    .card + .card, * + .alert, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
-        margin-top: 16px;
-    }
-}
-
-legend + .form-group {
-    margin-top: 0;
-}
-
-.tiles > .card + .card, .row > .card + .card, .with-sidebar > .card + .card,
-.row > .alert + .alert, .with-sidebar > .alert + .alert,
-.row > .card + .alert, .with-sidebar > .card + .alert,
-.row > .alert + .card, .with-sidebar > .alert + .card,
-.row > * + .buttons, .row > * + .form-group {
-    margin-top: 0;
+    .boxes {flex-direction: column;}
 }

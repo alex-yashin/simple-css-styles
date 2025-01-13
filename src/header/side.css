@@ -44,7 +44,7 @@ nav.side > header > a > * {
 }
 
 nav.side > ul.nav > li > a, nav.side > ul.nav > li > ul {
-    padding: 16px 0 16px 32px;
+    padding: 1rem 0 1rem 2rem;
 }
 
 nav.side > ul.nav > li {
@@ -63,5 +63,5 @@ nav.side > ul.nav > li.points {
 }
 
 nav.side > ul.nav + ul.nav {
-    margin-top: 24px;
+    margin-top: 1rem;
 }

@@ -1,6 +1,6 @@
 /* список статей для CMS */
 .nav.feed li {
-    padding: 0.5rem 0;
+    padding: 0.5em 0;
     border-top: 1px solid #eee;
 }
 
@@ -18,7 +18,7 @@
 
 .nav.feed li .short {
     display: block;
-    max-height: 3rem;
+    max-height: 3em;
     overflow: hidden;
 }
 .nav.feed li .short i {
@@ -30,9 +30,9 @@
     justify-content: center;
     align-items: center;
     float: left;
-    height: 3rem;
-    width: 3rem;
-    border-radius: 3rem;
-    margin-right: 0.5rem;
+    height: 3em;
+    width: 3em;
+    border-radius: 3em;
+    margin-right: 0.5em;
     overflow: hidden;
 }

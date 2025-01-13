@@ -2,8 +2,8 @@
     /* overflow: hidden; почему-то заставляет flex сжимать карточку в колонках */
     display: block;
     background: white;
-    border-radius: 16px;
-    padding: 24px;
+    border-radius: 1rem;
+    padding: 1rem;
 
     -webkit-box-shadow: 0 4px 40px rgba(217,218,224,.5);
     box-shadow: 0 4px 40px rgba(217,218,224,.5);
@@ -15,12 +15,6 @@
     position: relative;
 }
 
-@media (max-width: 1296px) {
-    .card, .alert {
-        padding: 16px;
-    }
-}
-
 /* компактная карточка - карточка без полей */
 .card.compact {
     padding: 0;
@@ -30,7 +24,7 @@
 }
 
 .card.compact > *:first-child {
-    border-radius: 16px 16px 0 0;
+    border-radius: 1rem 1rem 0 0;
     overflow: hidden;
 }
 
@@ -38,35 +32,22 @@
     flex-shrink: 0;
 }
 
-/* 1.5rem - типовой отступ */
 .card.compact .card-body {
-    padding: 24px;
+    padding: 1rem;
     height: 100%;
     flex-shrink: 1;
 }
 
 .card > header {
-    margin: -24px -24px 0 -24px;
+    margin: -1rem -1rem 0 -1rem;
 }
 
 .compact.card > header {
     margin: 0;
 }
 
-@media (max-width: 1296px) {
-    .card > header {
-        margin: -16px -16px 0 -16px;
-    }
-}
-
 .card > footer {
-    margin: 0 -24px 0 -24px;
-}
-
-@media (max-width: 1296px) {
-    .card > footer {
-        margin: 0 -16px 0 -16px;
-    }
+    margin: 0 -1rem 0 -1rem;
 }
 
 /* подвал карточки может состоять из одной большой кнопки */
@@ -75,22 +56,15 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    border-radius: 0 0 16px 16px;
+    border-radius: 0 0 1rem 1rem;
 }
 
 .card > header > h3 {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     line-height: 1em;
-    padding: 24px;
+    padding: 1rem;
     margin: 0;
 }
-
-@media (max-width: 1296px) {
-    .card > header > h3 {
-        padding: 16px;
-    }
-}
-
 
 .card.collapsed > header {
     cursor: pointer;
@@ -127,7 +101,7 @@
 }
 
 .card.collapsed > header + * {
-    padding-bottom: 24px;
+    padding-bottom: 1rem;
     display: none;
 }
 
@@ -159,16 +133,16 @@ a.card {
 }
 
 .tiles .card-body p {
-    max-height: 6rem;
+    max-height: 6em;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1023px) {
     .tiles > .card .top .badge {
         padding: 0;
-        font-size: 0.875rem;
+        font-size: 0.875em;
         background: none;
         display: none;
     }

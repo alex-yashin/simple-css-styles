@@ -10,8 +10,8 @@ body > footer .row {
     padding: 4.625rem 0 2.625rem 0;
 }
 
-body > footer nav.social {
-    font-size: 1.875rem;
+body > footer nav.social ul > li > a > i {
+    font-size: 1.875em;
 }
 
 body > footer nav.social ul.nav.bar {
@@ -19,20 +19,15 @@ body > footer nav.social ul.nav.bar {
 }
 
 body > footer nav.social footer {
-    margin-top: 16px;
+    margin-top: 1rem;
 }
 
 body > footer .legal {
-    font-size: 0.875rem;
-    line-height: 1.675;
+    font-size: 0.875em;
 }
 
 body > footer p.copyright {
     text-align: center;
-    padding: 2rem;
+    padding: 2em;
     margin: 0;
-}
-
-body > footer ul.nav + ul.nav {
-    padding-top: 2rem;
 }

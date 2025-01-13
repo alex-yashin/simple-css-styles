@@ -1,6 +1,61 @@
-.tiles > * > img, .tiles > * > a > img{
+.container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.tiles > *, .tile {
+    box-sizing: border-box;
+}
+
+/* плиточка и колонки */
+.tiles, .with-sidebar, .row {
+    display: flex;
+    gap: 1rem;
+}
+
+.tiles {
+    flex-wrap: wrap;
+}
+
+.tiles > * > img, .tiles > * > a > img {
     width: 100%;
 }
+
+.row > * {
+    flex: 1;
+}
+
+.with-sidebar > main {
+    width: 100%;
+}
+
+/* отступы */
+.section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* все, что с фоном, должно быть с отступом между собой */
+.card + .card, * + .alert, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
+    margin-top: 1rem;
+}
+
+legend + .form-group {
+    margin-top: 0;
+}
+
+.tiles > .card + .card,
+.row > .card + .card,
+.with-sidebar > .card + .card,
+.row > .alert + .alert, .with-sidebar > .alert + .alert,
+.row > .card + .alert, .with-sidebar > .card + .alert,
+.row > .alert + .card, .with-sidebar > .alert + .card,
+.row > * + .buttons, .row > * + .form-group {
+    margin-top: 0;
+}
+
 
 /* другие элементы */
 body > section > .container > header, body > nav > .container > header, body > .container > main > header {
@@ -19,3 +74,30 @@ body > section > .container > header, body > nav > .container > header, body > .
     margin-left: auto;
     margin-right: auto;
 }
+
+
+/* boxes */
+.boxes {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.boxes > *, .box {
+    padding: 1rem;
+}
+
+.boxes > .boxes {
+    padding: 0;
+}
+
+.box + .boxes {
+    border-top: 1px solid #ccc;
+}
+
+.boxes > * + * {
+    border-left: 1px solid #ccc;
+}
+

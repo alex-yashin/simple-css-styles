@@ -49,10 +49,10 @@ body.overlay-lock {
     width: 100%;
 }
 
-@media (max-width: 1296px) {
+@media (max-width: 1295px) {
     .popup-right {
         /* чтобы не перекрывалось кнопками мобильной навигации */
-        padding: 16px 16px 5rem 16px;
+        padding: 1rem 1rem 5rem 1rem;
     }
 
     .popup-right {
@@ -111,11 +111,11 @@ body.overlay-lock {
     text-align: center;
     top: 2rem;
     color: #4a80ff;
-    font-size: 0.75rem;
+    font-size: 0.75em;
 }
 
 .popup-right > header > h3 {
-    font-size: 1.75rem;
+    font-size: 1.75em;
 }
 
 .popup > img {
@@ -127,7 +127,7 @@ body.overlay-lock {
         width: 100%;
         text-align: center;
         padding: 0 16px;
-        font-size: 1.125rem;
+        font-size: 1.125em;
     }
 
     .popup > header > .close {
@@ -165,7 +165,7 @@ body.overlay-lock {
 }
 
 .popup-wide h3 {
-    font-size: 1.75rem;
+    font-size: 1.75em;
 }
 
 @media (max-device-width: 1040px) {

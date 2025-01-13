@@ -27,13 +27,13 @@ body > header > .container {
 body > header > .container > .icon-search,
 body > header > .container > .icon-burger
 {
-    font-size: 1.25rem;
-    height: 1.25rem;
+    font-size: 1.25em;
+    height: 1.25em;
 }
 
 /* меню: nav.menu > .container > ul.nav.bar > li > a */
 nav.menu {
-    line-height: 3.75rem;
+    line-height: 3.75em;
     white-space: nowrap;
     box-sizing: border-box;
 }

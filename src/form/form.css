@@ -11,19 +11,18 @@
     border-radius: 0;
     background: transparent;
     color: #333;
-    font-size: 1rem;
     font-weight: normal;
     border-left: 0;
     border-right: 0;
     border-top: 0;
     border-bottom: 1px solid #333;
-    height: 1.5rem;
+    height: 1.5em;
     width: 100%;
     outline: 0;
 }
 
 .form-group .form-control, .form-group .form-control-after {
-    padding: 2rem 0 0.5rem 0;
+    padding: 2em 0 0.5em 0;
     box-sizing: content-box;
 }
 
@@ -36,11 +35,11 @@
 
 /* отступ равен padding`у метки сверху, а высота строки равна высоте строки метки */
 .form-group .form-control + .select-button {
-    top: 2rem;
+    top: 2em;
     pointer-events: none;
     position: absolute;
     display: inline-block;
-    line-height: 1.5rem;
+    line-height: 1.5em;
     margin-left: -24px;
     vertical-align: top;
 }
@@ -69,7 +68,7 @@
 
     pointer-events: none;
     position: absolute;
-    top: 2rem;
+    top: 2em;
     left: 0;
 
     text-decoration: inherit;
@@ -85,11 +84,11 @@
 }
 
 .form-group.filled > label.control-label, .form-group.focused > label.control-label {
-    transform: translateY(-2rem);
+    transform: translateY(-2em);
 }
 
 .form-group .form-control + p, .form-group .form-control + .select-button + p, .form-group .input-group + p {
-    padding-top: 0.5rem;
+    padding-top: 0.5em;
 }
 
 .form-group select.form-control + .select-button {
