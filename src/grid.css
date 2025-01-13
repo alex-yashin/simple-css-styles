@@ -151,8 +151,20 @@
     align-items: stretch;
 }
 
-.boxes > * {
-    padding: 16px;
+.boxes > *, .box {
+    padding: 1rem;
+}
+
+.boxes > .boxes {
+    padding: 0;
+}
+
+.box + .boxes {
+    border-top: 1px solid #ccc;
+}
+
+.boxes > * + * {
+    border-left: 1px solid #ccc;
 }
 
 /* плиточка и колонки */
