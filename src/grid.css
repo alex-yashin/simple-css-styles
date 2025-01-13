@@ -103,19 +103,19 @@
 }
 
 @media (max-width: 1023px) {
-    .container, .limited.container, body.limited-containers .container {
+    .container, .limited.container {
         width: 824px;
     }
 }
 
 @media (max-width: 871px) {
-    .container, .limited.container, body.limited-containers .container {
+    .container, .limited.container {
         width: 656px;
     }
 }
 
 @media (max-width: 687px) {
-    .container, .limited.container, body.limited-containers .container {
+    .container, .limited.container {
         width: 400px;
     }
 }
@@ -258,6 +258,10 @@ legend + .form-group {
     margin-top: 0;
 }
 
-.tiles .card + .card, .row .card + .card, .row > .alert + .alert, .row > .card + .alert, .row > .alert + .card, .row > * + .buttons, .row > * + .form-group {
+.tiles > .card + .card, .row > .card + .card, .with-sidebar > .card + .card,
+.row > .alert + .alert, .with-sidebar > .alert + .alert,
+.row > .card + .alert, .with-sidebar > .card + .alert,
+.row > .alert + .card, .with-sidebar > .alert + .card,
+.row > * + .buttons, .row > * + .form-group {
     margin-top: 0;
 }
