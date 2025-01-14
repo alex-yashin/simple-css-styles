@@ -1,0 +1,41 @@
+.context-menu {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    margin-left: 1rem;
+    border-radius: 0 1rem 1rem 1rem;
+    padding: 1rem 0;
+    background: #fff;
+    border: 1px solid #eee;
+
+    box-shadow: 0 4px 40px rgba(217,218,224,.5);
+    -webkit-box-shadow: 0 4px 40px rgba(217,218,224,.5);
+}
+
+.context-menu > ul > li > a {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.context-menu.active {
+    display: block;
+}
+
+.context-menu .dropdown-menu {
+    left: 50%;
+    top: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+    min-width: max-content;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.context-menu .dropdown:hover .dropdown-menu {
+    display: none;
+}
+
+.context-menu .dropdown.active .dropdown-menu {
+    display: flex;
+    gap: 1rem;
+}
