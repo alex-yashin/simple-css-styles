@@ -9,6 +9,7 @@
     box-shadow: 0 4px 40px rgba(217,218,224,.5);
 
     position: relative;
+    box-sizing: border-box;
 }
 
 .card .card-body {
