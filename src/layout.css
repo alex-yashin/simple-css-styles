@@ -27,7 +27,7 @@
     flex: 1;
 }
 
-.with-sidebar > main {
+.with-sidebar > .main {
     width: 100%;
 }
 
