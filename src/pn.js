@@ -29,5 +29,5 @@ pn.request = async (method, url, data, headers) => {
     if (method !== 'get') { hs['X-CSRF-Token'] = pn.csrf(); }
     return await fetch(url, {method: method, redirect: 'manual', headers: hs, body: data});
 };
-pn.csrf = () => pn.first('meta[name="csrf-token"]', () => this.content);
+pn.csrf = () => pn.first('meta[name="csrf-token"]', (e) => e.content);
 pn.cookie = (n) => decodeURIComponent(document.cookie.replace(new RegExp('(?:(?:^|.*;)\\s*' + encodeURIComponent(n).replace(/[\-\.\+\*]/g, '\\$&') + '\\s*\\=\\s*([^;]*).*$)|^.*$'), '$1')) || null;
