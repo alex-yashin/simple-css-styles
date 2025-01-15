@@ -1,3 +1,8 @@
+.section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 .container {
     position: relative;
     margin-left: auto;
@@ -9,12 +14,12 @@
     box-sizing: border-box;
 }
 
-/* плиточка и колонки */
 .tiles, .with-sidebar, .row {
     display: flex;
     gap: 1rem;
 }
 
+/* тайлы переносятся */
 .tiles {
     flex-wrap: wrap;
 }
@@ -23,18 +28,14 @@
     width: 100%;
 }
 
+/* а в строчке колонки одинаковые */
 .row > * {
     flex: 1;
 }
 
+/* главная колонка в компоновке с сайдбаром берет все доступное пространство */
 .with-sidebar > .main {
     width: 100%;
-}
-
-/* отступы */
-.section {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
 }
 
 /* все, что с фоном, должно быть с отступом между собой */
@@ -42,17 +43,14 @@
     margin-top: 1rem;
 }
 
-legend + .form-group {
+/* но если это flex в строчку, то нет отступа */
+.tiles > * + *,
+.with-sidebar > * + *,
+.row > * + * {
     margin-top: 0;
 }
 
-.tiles > .card + .card,
-.row > .card + .card,
-.with-sidebar > .card + .card,
-.row > .alert + .alert, .with-sidebar > .alert + .alert,
-.row > .card + .alert, .with-sidebar > .card + .alert,
-.row > .alert + .card, .with-sidebar > .alert + .card,
-.row > * + .buttons, .row > * + .form-group {
+legend + .form-group {
     margin-top: 0;
 }
 
@@ -76,7 +74,7 @@ body > section > .container > header, body > nav > .container > header, body > .
 }
 
 
-/* boxes */
+/* блочная компоновка */
 .boxes {
     display: flex;
     flex-direction: row;
@@ -100,3 +98,4 @@ body > section > .container > header, body > nav > .container > header, body > .
 .boxes > * + * {
     border-left: 1px solid #ccc;
 }
+
