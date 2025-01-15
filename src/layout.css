@@ -38,7 +38,7 @@
 }
 
 /* все, что с фоном, должно быть с отступом между собой */
-.card + .card, * + .alert, .alert + .alert, .card + .alert, .alert + .card, * + .buttons, * + .form-group {
+* + .card, * + .alert, * + .buttons, * + .form-group {
     margin-top: 1rem;
 }
 
@@ -100,4 +100,3 @@ body > section > .container > header, body > nav > .container > header, body > .
 .boxes > * + * {
     border-left: 1px solid #ccc;
 }
-
