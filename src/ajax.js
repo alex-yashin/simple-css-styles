@@ -97,7 +97,11 @@ const listenAjaxEvents = function(root) {
 
         el.dispatchEvent(new Event(resp.ok ? 'success' : 'error'));
 
-        return await resp.json();
+        try {
+            return await resp.json();
+        } catch (e) {
+            return [];
+        }
     };
 
     let resolveRedirect = function (el, resp) {
