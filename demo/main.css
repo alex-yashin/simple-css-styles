@@ -1,3 +1,4 @@
+@import "../vendor/normalize.css";
 @import "../src/typo.css";
 @import "../src/layout.css";
 @import "../src/grid.css";
