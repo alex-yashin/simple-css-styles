@@ -44,7 +44,7 @@ PinaSkin.showError = function (el, subj, mess) {
                 if (help) {
                     help.appendChild(helpContent);
                 } else {
-                    input.parentNode.insertBefore(helpContent, input.nextSibling);
+                    fg.appendChild(helpContent);
                 }
             }
         }
