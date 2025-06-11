@@ -15,6 +15,9 @@ button, .btn {
     font-size: 1em;
     display: inline-block;
     line-height: 1em;
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
     box-sizing: border-box;
 
     -webkit-touch-callout: none; /* iOS Safari */

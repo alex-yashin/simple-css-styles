@@ -1,6 +1,6 @@
-.btn-icon-cart:before, .icon-cart {
-    background: url(cart.svg) center center no-repeat;
-}
+/*.control-quantity > span:first-child:before, .icon-cart {*/
+/*    background: url(cart.svg) center center no-repeat;*/
+/*}*/
 
 /* группа кнопок покупки и др, например, избранное и шаринг */
 .purchase {
@@ -14,7 +14,14 @@
     min-width: 144px;
 }
 
-.control-quantity > .btn {
+.control-quantity > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.control-quantity > span + span {
     display: none;
     position: relative;
     width: 100%;
@@ -22,11 +29,12 @@
     white-space: nowrap;
 }
 
-.control-quantity > .active {
+.control-quantity.detailed > span {
+    display: none;
+}
+
+.control-quantity.detailed > span + span {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
 }
 
 .control-quantity .minus, .control-quantity .plus {
