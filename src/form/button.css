@@ -13,13 +13,19 @@ button, .btn {
     text-align: center;
     padding: 1em;
     font-size: 1em;
-    font-weight: 700;
     display: inline-block;
     line-height: 1em;
     -webkit-transition: .3s ease;
     -o-transition: .3s ease;
     transition: .3s ease;
     box-sizing: border-box;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
 .btn-icon:before, .icon {
@@ -33,7 +39,6 @@ button, .btn {
 
 .link, .btn-link {
     text-decoration: none;
-    font-weight: bold;
     outline: 0;
     background: 0 0;
     border: 0;
