@@ -1,190 +1,79 @@
-let zzz = function (pattern, args) {
-
-    let getTokens = function(template) {
-        let operators = ['.', '#', '[', ']', '(', ')', '%', '+', '='];
-        let tokens = [];
-        let token = '';
-        let pos = 0;
-        let len = template.length;
-        while (pos < len) {
-            if (operators.includes(template[pos])) {
-                if (token !== '') {
-                    tokens.push(token);
-                }
-                token = '';
-                tokens.push(template[pos]);
-            } else {
-                token = token + template[pos];
-            }
-            pos++;
+function zzz(tpl, args) {
+    function getTokens() {
+        let ops = ['.', '#', '[', ']', '(', ')', '%', '+', '='], r = [], t = '', p = 0, l = tpl.length;
+        while (p < l) {
+            if (ops.includes(tpl[p])) {
+                if (t !== '') r.push(t);
+                t = '';
+                r.push(tpl[p]);
+            } else t = t + tpl[p];
+            p++;
         }
-        if (token) {
-            tokens.push(token);
-        }
-        return tokens;
-    };
-
-    let tokens = getTokens(pattern);
-    let stack = [];
-    let content = [];
-    let tag = '';
-    let options = {};
-
-    let next = function() {
-        return tokens.shift();
+        if (t) r.push(t);
+        return r;
     }
-
-    let expected = function(t) {
-        if (typeof tokens[0] == 'undefined') {
-            return false;
-        }
-        return tokens[0] === t;
+    let tns = getTokens(), st = [], cn = [], tg = '', ops = {};
+    function next() {return tns.shift();}
+    function arg() {return '' + args.shift();}
+    function resolve(s) {return s === '%' ? arg() : s;}
+    function finished() {return tns.length === 0;}
+    function push() {st.push([cn, tg, ops])}
+    function pop() {let line = st.pop(); cn = line[0]; tg = line[1]; ops = line[2];}
+    function startTag() {tg = ''; ops = {};}
+    function begin() {startTag(); cn = [];}
+    function expected(t) {
+        if (finished()) return false;
+        return tns[0] === t;
     }
-
-    let readExpected = function (t) {
+    function read(t) {
         let n = next();
-        if (typeof n === 'undefined') {
-            throw new Error('Expected ' + t + '. Expression is out');
-        }
-        if (n !== t) {
-            throw new Error('Expected ' + t + ' instead of ' + n);
-        }
+        if (typeof n === 'undefined') throw new Error('Expected ' + t);
+        if (n !== t) throw new Error('Expected ' + t + ' instead of ' + n);
         return n;
     }
-
-    let nextArg = function() {
-        return '' + args.shift();
-    }
-
-    let resolve = function(s) {
-        return s === '%' ? nextArg() : s;
-    }
-
-    let finished = function() {
-        return tokens.length === 0;
-    }
-
-    let push = function() {
-        stack.push([content, tag, options])
-    }
-
-    let pop = function () {
-        let line = stack.pop();
-        content = line[0];
-        tag = line[1];
-        options = line[2];
-    }
-
-    let startTag = function() {
-        tag = '';
-        options = {};
-    }
-
-    let begin = function() {
-        startTag();
-        content = [];
-    }
-
-    let makeTag = function(c) {
-        let e = document.createElement(tag ? tag : 'div');
-        if (c) {
-            if (typeof c === 'string') {
-                e.append(c);
-            } else {
-                for (i in c) {
-                    e.append(c[i]);
-                }
-            }
-        }
-        if (options) {
-            for (let i in options) {
-                e.setAttribute(i, options[i]);
-            }
-        }
+    function make(c) {
+        let e = document.createElement(tg ? tg : 'div');
+        if (c) if (typeof c === 'string') e.append(c); else for (i in c) e.append(c[i]);
+        for (let i in ops) e.setAttribute(i, ops[i]);
         return e;
     }
-
-
-    let flush = function(c) {
-        if (tag || Object.keys(options).length) {
-            content.push(makeTag(c))
-            startTag();
+    function flush(c) {
+        if (tg || Object.keys(ops).length) {
+            cn.push(make(c)); startTag();
         } else if (c) {
-            if (typeof c === 'string') {
-                content.push(c)
-            } else {
-                for (let i in c) {
-                    content.push(c[i]);
-                }
-            }
+            if (typeof c === 'string') cn.push(c); else for (let i in c) cn.push(c[i]);
         }
     }
 
-    let token = '';
-    while (token = tokens.shift()) {
-        switch (token) {
+    let t = '';
+    while (t = tns.shift()) {
+        switch (t) {
             case '.':
-                options['class'] = resolve(next());
+                let r = resolve(next()), c = ops['class'] ? ops['class'] : '';
+                ops['class'] = c ? c + ' ' + r : r;
                 break;
-            case '#':
-                options['id'] = resolve(next());
-                break;
+            case '#': ops['id'] = resolve(next()); break;
             case '[':
-                let name, value;
-                name = value = resolve(next());
+                let k = resolve(next()), v = k;
                 if (expected('=')) {
                     next();
-                    value = '';
-                    while (!expected(']') && !finished()) {
-                        value += next();
-                    }
-                    value = resolve(value);
+                    v = '';
+                    while (!expected(']') && !finished()) v += next();
+                    v = resolve(v);
                 }
-                readExpected(']');
-                options[name] = value;
+                read(']');
+                ops[k] = v;
                 break;
-            case '(':
-                push();
-                begin();
-                break;
-
-            case ')':
-                flush();
-                let deeperContent = content;
-                pop();
-                flush(deeperContent);
-                break;
-
-            case '+':
-                flush();
-                break;
-
-            case '%':
-                flush(resolve('%'));
-                break;
-
-            default:
-                tag = token;
-                break;
-
+            case '(': push(); begin(); break;
+            case ')': flush(); let d = cn; pop(); flush(d); break;
+            case '+': flush(); break;
+            case '%': flush(resolve('%')); break;
+            default: tg = t; break;
         }
     }
-
     flush();
-    return content;
+    return cn;
 }
-
-let zz = function(pattern, args) {
-    return zzz(pattern, args).shift();
-}
-
-Element.prototype.zz = function(pattern, args) {
-    let content = zzz(pattern, args);
-    for (let i in content) {
-        this.append(content[i]);
-    }
-}
-Element.prototype.zzz = function(pattern, args) {
-    this.innerHTML = '';
-    this.zz(pattern, args);
-}
+function zz(tpl, args) {return zzz(tpl, args).shift();}
+Element.prototype.zz = function(tpl, args) {let c = zzz(tpl, args); for (let i in c) this.append(c[i]);}
+Element.prototype.zzz = function(tpl, args) {this.innerHTML = '';this.zz(tpl, args);}
