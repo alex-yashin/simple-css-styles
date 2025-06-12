@@ -1,15 +1,12 @@
-/*.control-quantity > span:first-child:before, .icon-cart {*/
-/*    background: url(cart.svg) center center no-repeat;*/
-/*}*/
-
 /* группа кнопок покупки и др, например, избранное и шаринг */
 .purchase {
     display: flex;
-    gap: 16px;
-    max-width: 400px; /* максимальная ширина tiles */
+    gap: 1rem;
+    max-width: 100%; /* максимальная ширина tiles */
 }
 
 .control-quantity {
+    padding: 0;
     position: relative;
     min-width: 144px;
 }
@@ -19,6 +16,7 @@
     justify-content: center;
     align-items: center;
     gap: 4px;
+    height: 100%;
 }
 
 .control-quantity > span + span {
@@ -73,49 +71,4 @@
 
 .control-quantity.sold-out > .complex:after, .control-quantity.sold-out > .plus, .control-quantity.sold-out .simple {
     visibility: hidden;
-}
-
-/* в режиме комплексной кнопки если простая кнопка отсутвует в принципе (что характерно для корзины), то иконки не выводим */
-.control-quantity .complex:first-child i {
-    display: none;
-}
-
-@media (max-width: 1040px) {
-    .tiles .purchase, .tiles .control-quantity {
-        min-width: auto;
-    }
-
-    .tiles .purchase {
-        margin-top: 0.5rem;
-        justify-content: space-between;
-    }
-
-    .tiles .purchase .btn {
-        width: auto;
-        padding: 0.5rem;
-    }
-
-    .tiles .purchase .simple.btn:before, .tiles .purchase .complex .icon {
-        width: 24px;
-        height: 24px;
-    }
-
-    .tiles .purchase .simple.btn > span {
-        display: none;
-    }
-
-    .tiles .purchase .complex.btn:before,
-    .tiles .purchase .complex.btn:after {
-        display: none;
-    }
-
-    .tiles .purchase .complex.btn .minus {
-        width: 0;
-    }
-
-    .tiles .purchase .complex.btn .plus {
-        left: 0;
-        width: 100%;
-    }
-
 }

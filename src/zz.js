@@ -53,7 +53,7 @@ let zzz = function (pattern, args) {
     }
 
     let nextArg = function() {
-        return args.shift();
+        return '' + args.shift();
     }
 
     let resolve = function(s) {

@@ -1,13 +1,14 @@
 window.addEventListener("load", function () {
-    let controls = document.querySelectorAll(".control-quantity");
-    for (let i = 0; i < controls.length; i++) {
-        controls[i].addEventListener('plus', function (e) {
-            let amount = e.target.querySelector('.amount').innerText;
-            e.target.querySelector('.amount').innerText = +amount + 1;
-        });
-        controls[i].addEventListener('minus', function (e) {
-            let amount = e.target.querySelector('.amount').innerText;
-            e.target.querySelector('.amount').innerText = amount > 0 ? amount - 1 : 0;
-        });
-    }
+    pn.on('.control-quantity', 'plus', (e) => {
+        let a = e.target.querySelector('.amount');
+        a.innerText = +(a.innerText) + 1;
+        console.log(a, a.innerText);
+    });
+    pn.on('.control-quantity', 'minus', (e) => {
+        let a = e.target.querySelector('.amount');
+        a.innerText = Math.max(+(a.innerText) - 1, 0);
+        if (a.innerText === '0') {
+            e.target.classList.remove('detailed');
+        }
+    });
 });
