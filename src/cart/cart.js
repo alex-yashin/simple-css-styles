@@ -1,6 +1,6 @@
 pn.each('.btn-quantity', (c) => {
     var q = c.getAttribute('data-amount');
-    c.zzz('span.preview%+span.complex(span.minus+span.amount%+span.plus)', [c.innerText, q ? q : 0]);
+    zz('span.preview%+span.complex(span.minus+span.amount%+span.plus)').apply(c, [c.innerText, q ? q : 0]);
     c.addEventListener('click', () => {
         c.classList.add('detailed');
         c.dispatchEvent(new Event('plus'));
