@@ -5,13 +5,13 @@
     max-width: 100%; /* максимальная ширина tiles */
 }
 
-.control-quantity {
+.btn-quantity {
     padding: 0;
     position: relative;
     min-width: 100px;
 }
 
-.control-quantity > span {
+.btn-quantity > span {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,7 +19,7 @@
     height: 100%;
 }
 
-.control-quantity > span + span {
+.btn-quantity > span + span {
     display: none;
     position: relative;
     width: 100%;
@@ -27,15 +27,15 @@
     white-space: nowrap;
 }
 
-.control-quantity.detailed > span {
+.btn-quantity.detailed > span {
     display: none;
 }
 
-.control-quantity.detailed > span + span {
+.btn-quantity.detailed > span + span {
     display: flex;
 }
 
-.control-quantity .minus, .control-quantity .plus {
+.btn-quantity .minus, .btn-quantity .plus {
     position: absolute;
     z-index: 1;
     height: 100%;
@@ -45,15 +45,15 @@
     width: 50%;
 }
 
-.control-quantity .minus {
+.btn-quantity .minus {
     left: 0;
 }
 
-.control-quantity .plus {
+.btn-quantity .plus {
     right: 0;
 }
 
-.control-quantity > .complex:before {
+.btn-quantity > .complex:before {
     content: '-';
     display: inline-block;
     position: absolute;
@@ -61,7 +61,7 @@
     z-index: 0;
 }
 
-.control-quantity > .complex:after {
+.btn-quantity > .complex:after {
     content: '+';
     display: inline-block;
     position: absolute;
@@ -69,6 +69,6 @@
     z-index: 0;
 }
 
-.control-quantity.sold-out > .complex:after, .control-quantity.sold-out > .plus, .control-quantity.sold-out .simple {
+.btn-quantity.sold-out > .complex:after, .btn-quantity.sold-out > .plus, .btn-quantity.sold-out .simple {
     visibility: hidden;
 }

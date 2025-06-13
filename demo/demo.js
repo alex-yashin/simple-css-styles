@@ -1,8 +1,8 @@
-pn.on('.control-quantity', 'plus', (e) => {
+pn.on('.btn-quantity', 'plus', (e) => {
     let a = e.target.querySelector('.amount');
     a.innerText = +(a.innerText) + 1;
 });
-pn.on('.control-quantity', 'minus', (e) => {
+pn.on('.btn-quantity', 'minus', (e) => {
     let a = e.target.querySelector('.amount');
     a.innerText = Math.max(+(a.innerText) - 1, 0);
     if (a.innerText === '0') {

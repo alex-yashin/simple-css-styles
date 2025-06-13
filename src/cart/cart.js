@@ -1,4 +1,4 @@
-pn.each('.control-quantity', (c) => {
+pn.each('.btn-quantity', (c) => {
     var q = c.getAttribute('data-amount');
     c.zzz('span.preview%+span.complex(span.minus+span.amount%+span.plus)', [c.innerText, q ? q : 0]);
     c.addEventListener('click', () => {
