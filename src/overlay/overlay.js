@@ -7,30 +7,18 @@ const openDarkOverlay = function (callback) {
 };
 
 const openOverlayImpl = function(callback, cl) {
-
-    let o = document.createElement('div');
-    o.classList.add('overlay');
-    if (cl) {
-        o.classList.add(cl);
-    }
+    let o = zz('.overlay.%').make([cl]);
     o.addEventListener('click', function() {
         hideOverlay();
         callback();
     });
-    document.querySelector('body').append(o);
-    document.querySelector('body').classList.add('overlay-lock');
-
+    pn.first('body', (b) => {b.append(o); b.classList.add('overlay-lock');});
 };
 
 const hideOverlay = function() {
-    let o = document.querySelector('.overlay');
-    if (!o) {
-        return;
-    }
-    o.remove();
+    pn.each('.overlay', (e) => e.remove());
     document.querySelector('body').classList.remove('overlay-lock');
 };
-
 
 const showModal = function(s) {
     showModalImpl(s, '');
@@ -43,63 +31,40 @@ const showDarkModal = function(s) {
 let openedModal = '';
 
 const showModalImpl = function(s, cl) {
-    if (openedModal) {
-        hideModal(openedModal);
-    }
+    if (openedModal) hideModal(openedModal);
     openedModal = s;
-    document.querySelector(s).classList.add('active');
+    pn.first(s, (e) => e.classList.add('active'));
     openOverlayImpl(function() {
         hideModal(s);
     }, cl);
 };
 
-
 const hideModal = function(s) {
     if (!s) {
         //просто пытаемся закрыть первый активный попап в родительском окне, нужно как-то универсальнее адресовать
         if (parent && parent.document.querySelector('.popup.active')) {
-            parent.document.querySelector('.popup.active').classList.remove('active');
-            let o = parent.document.querySelector('.overlay');
-            if (!o) {
-                return;
-            }
-            o.remove();
-            parent.document.querySelector('body').classList.remove('overlay-lock');
+            pn.firstIn(parent.document, '.popup.active', (e) => e.classList.remove('active'));
+            pn.firstIn(parent.document, '.overlay', (e) => e.remove());
+            pn.firstIn(parent.document, 'body', (e) => e.classList.remove('overlay-lock'));
             return;
         }
-
         return;
     }
-
-    document.querySelector(s).classList.remove('active');
+    pn.first(s, (e) => e.classList.remove('active'));
     hideOverlay();
     openedModal = '';
 };
 
-let openModalLinks = document.querySelectorAll('[data-toggle-modal]');
-for (let i = 0; i < openModalLinks.length; i ++) {
-    openModalLinks[i].addEventListener('click', function(e) {
-        e.preventDefault();
-
-        let attribute = this.attributes['data-toggle-modal'];
-        if (!attribute) {
-            return;
-        }
-
-        let modal = document.querySelector(attribute.value);
-        if (modal.classList.contains('active')) {
-            hideModal(attribute.value);
-            return;
-        }
-
-        showDarkModal(attribute.value);
+pn.click('[data-toggle-modal]', function (e) {
+    e.preventDefault();
+    let a = this.attributes['data-toggle-modal'];
+    if (!a) {
+        return;
+    }
+    pn.first(a.value, (m) => {
+        if (m.classList.contains('active')) hideModal(a.value);
+        else showDarkModal(a.value);
     });
-}
+});
 
-let closeModalLinks = document.querySelectorAll('[data-close-modal]');
-for (let i = 0; i < closeModalLinks.length; i++) {
-    closeModalLinks[i].addEventListener('click', function(e) {
-        e.preventDefault();
-        hideModal(openedModal);
-    });
-}
+pn.click('[data-close-modal]', (e) => {e.preventDefault(); hideModal(openedModal);});
