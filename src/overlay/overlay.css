@@ -19,7 +19,7 @@ body.overlay-lock {
 .popup {
     display: none;
     background: #fff;
-    padding: 24px;
+    padding: 1rem;
     overflow-x: hidden;
     visibility: visible;
     overflow-y: auto;
