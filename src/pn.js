@@ -15,6 +15,8 @@ pn.onIn = (root, sel, ev, fn) => pn.eachIn(root, sel, (e) => e.addEventListener(
 pn.on = (sel, ev, fn) => pn.onIn(document, sel, ev, fn);
 pn.clickIn = (root, sel, fn) => pn.onIn(root, sel, 'click', fn);
 pn.click = (sel, fn) => pn.on(sel, 'click', fn);
+pn.done = (sel, fn) => pn.on(sel, 'success', fn);
+pn.fail = (sel, fn) => pn.on(sel, 'error', fn);
 pn.post = async (url, data, headers)=> await pn.requestJson('post', url, data, headers);
 pn.put = async (url, data, headers) => await pn.requestJson('put', url, data, headers);
 pn.delete = async (url, data, headers) => await pn.requestJson('delete', url, data, headers);
@@ -24,10 +26,10 @@ pn.requestJson  = async (method, url, data, headers) => {
     return await resp.json();
 };
 pn.request = async (method, url, data, headers) => {
-    let hs = headers ? headers : {};
-    hs.Accept = 'application/json';
-    if (method !== 'get') { hs['X-CSRF-Token'] = pn.csrf(); }
-    return await fetch(url, {method: method, redirect: 'manual', headers: hs, body: data});
+    var opts = {method: method, redirect: 'manual', headers: headers ? headers : {}};
+    opts.headers.Accept = 'application/json';
+    if (method !== 'get') { opts.headers['X-CSRF-Token'] = pn.csrf(); opts.body=data; }
+    return await fetch(url, opts);
 };
 pn.csrf = () => pn.first('meta[name="csrf-token"]', (e) => e.content);
 pn.cookie = (n) => decodeURIComponent(document.cookie.replace(new RegExp('(?:(?:^|.*;)\\s*' + encodeURIComponent(n).replace(/[\-\.\+\*]/g, '\\$&') + '\\s*\\=\\s*([^;]*).*$)|^.*$'), '$1')) || null;

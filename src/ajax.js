@@ -1,5 +1,3 @@
-$ = function() {return {'on': function () {}}};//временная заглушка под HandledForm
-
 let PinaSkin = {};
 PinaSkin.hideErrors = function (el) {
     pn.eachIn(el, '.pina-alert', function () {
@@ -88,38 +86,31 @@ const listenAjaxEvents = function(root) {
     let formRequest = async function (el, method, url, data, headers) {
         const resp = await pn.request(method, url, data, headers);
 
-        let to = resolveRedirect(el, resp);
-        if (to) {
+        var json = null;
+        try {
+            json = await resp.json();
+        } catch (e) {
+            return [];
+        }
+
+        el.dispatchEvent(new CustomEvent(resp.ok ? 'success' : 'error', {detail: json}));
+
+        var to = resolveRedirect(el, resp);
+        if (to === '#') {
+        } else if (to) {
             document.location = to + (to.indexOf('?') === -1 ? '?' : '&') + "_c=" + Math.round(Math.random() * Number.MAX_SAFE_INTEGER).toString(36);
         } else if (resp.ok) {
             document.location.reload();
         }
 
-        el.dispatchEvent(new Event(resp.ok ? 'success' : 'error'));
-
-        try {
-            return await resp.json();
-        } catch (e) {
-            return [];
-        }
+        return json;
     };
 
     let resolveRedirect = function (el, resp) {
-        if (resp.ok && el.getAttribute('data-success')) {
-            return el.getAttribute('data-success');
-        }
-
-        if (resp.ok && el.getAttribute('data-redirect')) {
-            return el.getAttribute('data-redirect');
-        }
-
-        if (resp.headers.get('location')) {
-            return resp.headers.get('location');
-        }
-
-        if (resp.headers.get('content-location')) {
-            return resp.headers.get('content-location');
-        }
+        if (resp.ok && el.getAttribute('data-success')) return el.getAttribute('data-success');
+        if (resp.ok && el.getAttribute('data-redirect')) return el.getAttribute('data-redirect');
+        if (resp.headers.get('location')) return resp.headers.get('location');
+        if (resp.headers.get('content-location')) return resp.headers.get('content-location');
         return '';
     };
 
@@ -130,8 +121,6 @@ const listenAjaxEvents = function(root) {
         if (submit) {
             submit.disabled = true;
         }
-
-        this.dispatchEvent(new Event('ajax-submit'));
 
         let json = await formRequest(this, this.method, this.action, new FormData(this), {});
 
