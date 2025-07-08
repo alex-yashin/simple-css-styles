@@ -28,7 +28,8 @@ pn.requestJson  = async (method, url, data, headers) => {
 pn.request = async (method, url, data, headers) => {
     var opts = {method: method, redirect: 'manual', headers: headers ? headers : {}};
     opts.headers.Accept = 'application/json';
-    if (method !== 'get') { opts.headers['X-CSRF-Token'] = pn.csrf(); opts.body=data; }
+    var a = document.createElement('a'); a.href = url; var l=a.host === document.location.host;
+    if (method !== 'get') { opts.body=data; if (l) opts.headers['X-CSRF-Token'] = pn.csrf();}
     return await fetch(url, opts);
 };
 pn.csrf = () => pn.first('meta[name="csrf-token"]', (e) => e.content);
