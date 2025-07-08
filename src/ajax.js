@@ -32,8 +32,11 @@ PinaSkin.showError = function (el, subj, mess) {
             } else {
                 let help = null;
                 let helpTarget = input.getAttribute('data-error-target');
-                if (!helpTarget) {
+                if (helpTarget) {
                     help = fg.querySelector(helpTarget);
+                    if (!help) {
+                        help = el.querySelector(helpTarget);
+                    }
                 }
 
                 var helpContent = document.createElement('p');
