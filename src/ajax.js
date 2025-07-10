@@ -74,17 +74,18 @@ PinaSkin.showErrorAlert = function(el, mess) {
 
 };
 
-const listenAjaxEvents = function(root) {
-    let handleErrors = function (context, data) {
-        PinaSkin.hideErrors(context);
+const handleAjaxErrors = function (root, data) {
+    PinaSkin.hideErrors(root);
 
-        if (data && data.errors && data.errors.length > 0) {
-            for (i = 0; i < data.errors.length; i++) {
-                var m = data.errors[i];
-                PinaSkin.showError(context, m[1] ? m[1] : '', m[0]);
-            }
+    if (data && data.errors && data.errors.length > 0) {
+        for (var i = 0; i < data.errors.length; i++) {
+            var m = data.errors[i];
+            PinaSkin.showError(root, m[1] ? m[1] : '', m[0]);
         }
-    };
+    }
+};
+
+const listenAjaxEvents = function(root) {
 
     let formRequest = async function (el, method, url, data, headers) {
         const resp = await pn.request(method, url, data, headers);
@@ -127,7 +128,7 @@ const listenAjaxEvents = function(root) {
 
         let json = await formRequest(this, this.method, this.action, new FormData(this), {});
 
-        handleErrors(this, json);
+        handleAjaxErrors(this, json);
 
         if (submit) {
             submit.disabled = false;
