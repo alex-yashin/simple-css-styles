@@ -153,3 +153,7 @@ const listenAjaxEvents = function(root) {
 }
 
 listenAjaxEvents(document);
+
+const ajaxSubmit = function(sel) {
+    pn.first(sel, function (e) {e.dispatchEvent(new CustomEvent('submit', {cancelable: true}));});
+};
