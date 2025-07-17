@@ -120,11 +120,17 @@ const listenAjaxEvents = function(root) {
 
     let onSubmit = async function (e) {
         e.preventDefault();
+        // if (e.detail && e.detail.repeat) {
+        //     return;
+        // }
 
         let submit = this.querySelector('[type=submit]');
         if (submit) {
             submit.disabled = true;
         }
+
+        this.dispatchEvent(new Event('ajax-submit'));
+        // this.dispatchEvent(new CustomEvent('submit', {detail: {repeat: true}}));
 
         let json = await formRequest(this, this.method, this.action, new FormData(this), {});
 
