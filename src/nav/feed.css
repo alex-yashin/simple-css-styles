@@ -2,6 +2,7 @@
 .nav.feed li {
     padding: 0.5em 0;
     border-top: 1px solid #eee;
+    clear: left;
 }
 
 .nav.feed li:first-child {
@@ -30,9 +31,11 @@
     justify-content: center;
     align-items: center;
     float: left;
-    height: 3em;
     width: 3em;
-    border-radius: 3em;
     margin-right: 0.5em;
     overflow: hidden;
+}
+
+.nav.feed.with-avatar li .image {
+    border-radius: 100%;
 }
