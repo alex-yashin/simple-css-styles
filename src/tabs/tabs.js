@@ -1,33 +1,22 @@
-window.addEventListener("load", function () {
-    let myTabs = document.querySelectorAll("nav.tabs li");
+/* globals pn */
+'use strict';
+window.addEventListener('load', function () {
+    pn.click('nav.tabs li', function (event) {
+        pn.each('nav.tabs li', (e) => e.classList.remove('active'));
 
-    function myTabClicks(tabClickEvent) {
+        let clickedTab = event.currentTarget;
 
-        for (let i = 0; i < myTabs.length; i++) {
-            myTabs[i].classList.remove("active");
-        }
+        clickedTab.classList.add('active');
 
-        let clickedTab = tabClickEvent.currentTarget;
+        event.preventDefault();
 
-        clickedTab.classList.add("active");
+        pn.each('nav.tabs ~ .tab', (e) => e.classList.remove('active'));
 
-        tabClickEvent.preventDefault();
-
-        let myContentPanes = document.querySelectorAll("nav.tabs ~ .tab");
-
-        for (let i = 0; i < myContentPanes.length; i++) {
-            myContentPanes[i].classList.remove("active");
-        }
-
-        let anchorReference = tabClickEvent.target;
-        let activePaneId = anchorReference.getAttribute("href");
+        let anchorReference = event.target;
+        let activePaneId = anchorReference.getAttribute('href');
         let activePane = document.querySelector(activePaneId);
 
         activePane.classList.add("active");
 
-    }
-
-    for (let i = 0; i < myTabs.length; i++) {
-        myTabs[i].addEventListener("click", myTabClicks)
-    }
+    });
 });
