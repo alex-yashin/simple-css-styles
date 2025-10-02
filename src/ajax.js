@@ -85,38 +85,53 @@ const handleAjaxErrors = function (root, data) {
     }
 };
 
-const listenAjaxEvents = function(root) {
-
-    let formRequest = async function (el, method, url, data, headers) {
-        const resp = await pn.request(method, url, data, headers);
-
-        var json = null;
-        try {
-            json = await resp.json();
-        } catch (e) {
-            return [];
-        }
-
-        el.dispatchEvent(new CustomEvent(resp.ok ? 'success' : 'error', {detail: json}));
-
-        var to = resolveRedirect(el, resp);
-        if (to === '#') {
-        } else if (to) {
-            document.location = to + (to.indexOf('?') === -1 ? '?' : '&') + "_c=" + Math.round(Math.random() * Number.MAX_SAFE_INTEGER).toString(36);
-        } else if (resp.ok) {
-            document.location.reload();
-        }
-
-        return json;
-    };
-
+const ajaxRequest = async function (el, method, url, data, headers) {
     let resolveRedirect = function (el, resp) {
-        if (resp.ok && el.getAttribute('data-success')) return el.getAttribute('data-success');
-        if (resp.ok && el.getAttribute('data-redirect')) return el.getAttribute('data-redirect');
         if (resp.headers.get('location')) return resp.headers.get('location');
         if (resp.headers.get('content-location')) return resp.headers.get('content-location');
+        if (resp.ok && el.getAttribute('data-success')) return el.getAttribute('data-success');
+        if (resp.ok && el.getAttribute('data-redirect')) return el.getAttribute('data-redirect');
         return '';
     };
+
+    const resp = await pn.request(method, url, data, headers);
+
+    var json = null;
+    try {
+        json = await resp.json();
+    } catch (e) {
+        return [];
+    }
+
+    el.dispatchEvent(new CustomEvent(resp.ok ? 'success' : 'error', {detail: json}));
+
+    var to = resolveRedirect(el, resp);
+    if (to === '#') {
+    } else if (to) {
+        document.location = to + (to.indexOf('?') === -1 ? '?' : '&') + "_c=" + Math.round(Math.random() * Number.MAX_SAFE_INTEGER).toString(36);
+    } else if (resp.ok) {
+        document.location.reload();
+    }
+
+    return json;
+};
+
+const ajaxAction = function(el) {
+    let confirmation = el.getAttribute('data-confirmation-message');
+    if (confirmation && confirmation.length > 0 && !confirm(confirmation)) {
+        return false;
+    }
+
+    let method = el.getAttribute('data-method');
+    let resource = el.getAttribute('data-resource');
+    let params = el.getAttribute('data-params');
+    let headers = {
+        'Content-type': 'application/x-www-form-urlencoded',
+    };
+    ajaxRequest(el, method, '/' + resource, params, headers);
+};
+
+const listenAjaxEvents = function(root) {
 
     let onSubmit = async function (e) {
         e.preventDefault();
@@ -132,7 +147,7 @@ const listenAjaxEvents = function(root) {
         this.dispatchEvent(new Event('ajax-submit'));
         // this.dispatchEvent(new CustomEvent('submit', {detail: {repeat: true}}));
 
-        let json = await formRequest(this, this.method, this.action, new FormData(this), {});
+        let json = await ajaxRequest(this, this.method, this.action, new FormData(this), {});
 
         handleAjaxErrors(this, json);
 
@@ -141,22 +156,9 @@ const listenAjaxEvents = function(root) {
         }
     };
 
-    let onClick = function (e) {
-        e.preventDefault();
-
-        let method = this.getAttribute('data-method');
-        let resource = this.getAttribute('data-resource');
-        let params = this.getAttribute('data-params');
-        let headers = {
-            'Content-type': 'application/x-www-form-urlencoded',
-        };
-        formRequest(this, method, '/' + resource, params, headers);
-    };
-
     pn.onIn(root, '.pina-form', 'submit', onSubmit);
-    pn.onIn(root, '.pina-action', 'click', onClick);
-
-}
+    pn.onIn(root, '.pina-action', 'click', function (e) {e.preventDefault(); ajaxAction(this);});
+};
 
 listenAjaxEvents(document);
 
