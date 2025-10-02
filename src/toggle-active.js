@@ -1,7 +1,6 @@
-let toggleActiveElements = document.querySelectorAll(".toggle-active");
-for (let i = 0; i < toggleActiveElements.length; i++) {
-    toggleActiveElements[i].addEventListener('click', function(event) {
-        event.preventDefault();
-        this.classList.toggle('active');
-    });
-}
+/* globals pn */
+'use strict';
+pn.click('.toggle-active', function(e) {
+    e.preventDefault();
+    this.classList.toggle('active');
+});
