@@ -1,3 +1,4 @@
+/* globals pn */
 pn.click('.accordion', function(event) {
     if (this.classList.contains('active')) {
         return;

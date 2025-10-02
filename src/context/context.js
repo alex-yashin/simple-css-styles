@@ -1,18 +1,5 @@
+/* globals pn */
 (function() {
-
-    "use strict";
-
-    var menu = null;
-
-    var menuState = 0;
-    //
-    pn.each('.context', contextMenuListener);
-
-    contextListener();
-    clickListener();
-    keyupListener();
-
-    //
     function contextMenuListener() {
         let resource = this.getAttribute('data-resource');
         if (!resource) {
@@ -58,7 +45,7 @@
             if (m) {
                 pn.eachIn(m, '.dropdown', function() {
                     this.classList.remove('active');
-                })
+                });
 
                 let submenu = e.target.nextElementSibling;
                 if (!submenu) {
@@ -160,9 +147,19 @@
         // if ( (windowHeight - clickCoordsY) < menuHeight ) {
         //     menu.style.top = windowHeight - menuHeight + "px";
         // } else {
-            menu.style.top = clickCoordsY + "px";
+        menu.style.top = clickCoordsY + "px";
         // }
     }
+
+    var menu = null;
+
+    var menuState = 0;
+    //
+    pn.each('.context', contextMenuListener);
+
+    contextListener();
+    clickListener();
+    keyupListener();
 
 
 })();
