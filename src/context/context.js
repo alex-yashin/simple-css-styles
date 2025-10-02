@@ -1,5 +1,80 @@
-/* globals pn */
+/* globals pn, listenAjaxEvents */
 (function() {
+    'use strict';
+
+    var menu = null;
+
+    var menuState = 0;
+
+    function toggleMenuOn(text) {
+        if ( menuState !== 1 ) {
+            menuState = 1;
+
+            menu = document.createElement('div');
+            menu.innerHTML = text;
+            menu.classList.add('context-menu');
+            menu.classList.add('active');
+            listenAjaxEvents(menu);
+
+            document.querySelector('body').append(menu);
+        }
+    }
+
+    function toggleMenuOff() {
+        if ( menuState !== 0 ) {
+            menuState = 0;
+            menu.classList.remove('active');
+            menu.remove();
+        }
+    }
+
+    function getPosition(e) {
+        var posx = 0;
+        var posy = 0;
+
+        if (!e) {
+            e = window.event;
+        }
+
+        if (e.pageX || e.pageY) {
+            posx = e.pageX;
+            posy = e.pageY;
+        } else if (e.clientX || e.clientY) {
+            posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+            posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+        }
+
+        return {
+            x: posx,
+            y: posy
+        };
+    }
+
+
+    function positionMenu(e) {
+        let clickCoords = getPosition(e);
+        let clickCoordsX = clickCoords.x;
+        let clickCoordsY = clickCoords.y;
+
+        let menuWidth = menu.offsetWidth + 4;
+        // let menuHeight = menu.offsetHeight + 4;
+
+        let windowWidth = window.innerWidth;
+        // let windowHeight = window.innerHeight;
+
+        if ( (windowWidth - clickCoordsX) < menuWidth ) {
+            menu.style.left = (windowWidth - menuWidth) + 'px';
+        } else {
+            menu.style.left = clickCoordsX + 'px';
+        }
+
+        // if ( (windowHeight - clickCoordsY) < menuHeight ) {
+        //     menu.style.top = windowHeight - menuHeight + 'px';
+        // } else {
+        menu.style.top = clickCoordsY + 'px';
+        // }
+    }
+
     function contextMenuListener() {
         let resource = this.getAttribute('data-resource');
         if (!resource) {
@@ -27,7 +102,7 @@
     }
 
     function contextListener() {
-        document.addEventListener( "contextmenu", function(e) {
+        document.addEventListener( 'contextmenu', function(e) {
             if (e.target.href && !e.target.classList.contains('context')) {
                 toggleMenuOff();
                 return;
@@ -40,7 +115,7 @@
     }
 
     function clickListener() {
-        document.addEventListener( "click", function(e) {
+        document.addEventListener( 'click', function(e) {
             let m = e.target.closest('.context-menu');
             if (m) {
                 pn.eachIn(m, '.dropdown', function() {
@@ -82,79 +157,9 @@
             if ( e.keyCode === 27 ) {
                 toggleMenuOff();
             }
-        }
+        };
     }
 
-    function toggleMenuOn(text) {
-        if ( menuState !== 1 ) {
-            menuState = 1;
-
-            menu = document.createElement('div');
-            menu.innerHTML = text;
-            menu.classList.add('context-menu');
-            menu.classList.add('active');
-            listenAjaxEvents(menu);
-
-            document.querySelector('body').append(menu);
-        }
-    }
-
-    function toggleMenuOff() {
-        if ( menuState !== 0 ) {
-            menuState = 0;
-            menu.classList.remove('active');
-            menu.remove();
-        }
-    }
-
-    function getPosition(e) {
-        var posx = 0;
-        var posy = 0;
-
-        if (!e) e = window.event;
-
-        if (e.pageX || e.pageY) {
-            posx = e.pageX;
-            posy = e.pageY;
-        } else if (e.clientX || e.clientY) {
-            posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-            posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-        }
-
-        return {
-            x: posx,
-            y: posy
-        }
-    }
-
-    function positionMenu(e) {
-        let clickCoords = getPosition(e);
-        let clickCoordsX = clickCoords.x;
-        let clickCoordsY = clickCoords.y;
-
-        let menuWidth = menu.offsetWidth + 4;
-        // let menuHeight = menu.offsetHeight + 4;
-
-        let windowWidth = window.innerWidth;
-        // let windowHeight = window.innerHeight;
-
-        if ( (windowWidth - clickCoordsX) < menuWidth ) {
-            menu.style.left = (windowWidth - menuWidth) + "px";
-        } else {
-            menu.style.left = clickCoordsX + "px";
-        }
-
-        // if ( (windowHeight - clickCoordsY) < menuHeight ) {
-        //     menu.style.top = windowHeight - menuHeight + "px";
-        // } else {
-        menu.style.top = clickCoordsY + "px";
-        // }
-    }
-
-    var menu = null;
-
-    var menuState = 0;
-    //
     pn.each('.context', contextMenuListener);
 
     contextListener();

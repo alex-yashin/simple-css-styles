@@ -80,5 +80,5 @@ function zz(tpl) {
         'apply': function(e, args) {e.innerHTML = ''; this.append(e, args);},
         'append': function(e, args) {var c = run(tns.slice(), args); for (var i in c) e.append(c[i]);},
         'make': function(args) {var c = run(tns.slice(), args); return c.shift();}
-    }
+    };
 }
