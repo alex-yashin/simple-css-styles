@@ -87,9 +87,9 @@ const handleAjaxErrors = function (root, data) {
 
 const ajaxRequest = async function (el, method, url, data, headers) {
     let resolveRedirect = function (el, resp) {
+        if (resp.ok && el.getAttribute('data-success')) return el.getAttribute('data-success');
         if (resp.headers.get('location')) return resp.headers.get('location');
         if (resp.headers.get('content-location')) return resp.headers.get('content-location');
-        if (resp.ok && el.getAttribute('data-success')) return el.getAttribute('data-success');
         if (resp.ok && el.getAttribute('data-redirect')) return el.getAttribute('data-redirect');
         return '';
     };
