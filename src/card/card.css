@@ -15,10 +15,6 @@
 .card .card-body {
     position: relative;
 }
-.card .card-body > * {
-    margin: 0;
-}
-
 
 /* компактная карточка - карточка без полей */
 .card.compact, .card.covered {
