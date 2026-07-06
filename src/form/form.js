@@ -1,6 +1,4 @@
-/* globals pn */
-(function () {
-    'use strict';
+function onForm(e) {
     let getNearestParent = function(el, cl) {
         if (!el.parentElement) {
             return false;
@@ -13,7 +11,7 @@
         return getNearestParent(el.parentElement, cl);
     };
 
-    pn.each('input[type=text],input[type=number],input[type=password],textarea,select', function(e) {
+    pn.eachIn(e, 'input[type=text],input[type=number],input[type=password],textarea,select', function(e) {
         if (e.value !== '') {
             let parent = getNearestParent(e, 'form-group');
             if (parent) {
@@ -46,4 +44,10 @@
             parent.classList.add('focused');
         });
     });
+}
+
+(function () {
+    'use strict';
+
+    onForm(document);
 })();
